@@ -1,0 +1,1712 @@
+[
+  {
+    "id": 1,
+    "title": "Гарри Поттер и философский камень",
+    "author": "Дж. К. Роулинг",
+    "aliases": [
+      "гарри поттер"
+    ],
+    "pages": 432,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "school_life",
+      "rebellion",
+      "first_love"
+    ],
+    "series": "Гарри Поттер",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 2,
+    "title": "Гарри Поттер и Тайная комната",
+    "author": "Дж. К. Роулинг",
+    "aliases": [],
+    "pages": 480,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "school_life",
+      "investigation",
+      "psych_tension"
+    ],
+    "series": "Гарри Поттер",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 3,
+    "title": "Гарри Поттер и узник Азкабана",
+    "author": "Дж. К. Роулинг",
+    "aliases": [],
+    "pages": 528,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "school_life",
+      "time_travel",
+      "investigation"
+    ],
+    "series": "Гарри Поттер",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 4,
+    "title": "Гарри Поттер и Кубок огня",
+    "author": "Дж. К. Роулинг",
+    "aliases": [],
+    "pages": 636,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "school_life",
+      "rebellion",
+      "court_intrigue"
+    ],
+    "series": "Гарри Поттер",
+    "series_part": 4,
+    "cover_url": ""
+  },
+  {
+    "id": 5,
+    "title": "Гарри Поттер и Орден Феникса",
+    "author": "Дж. К. Роулинг",
+    "aliases": [],
+    "pages": 766,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "school_life",
+      "rebellion",
+      "psych_tension"
+    ],
+    "series": "Гарри Поттер",
+    "series_part": 5,
+    "cover_url": ""
+  },
+  {
+    "id": 6,
+    "title": "Гарри Поттер и Принц-полукровка",
+    "author": "Дж. К. Роулинг",
+    "aliases": [],
+    "pages": 607,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "school_life",
+      "investigation",
+      "first_love"
+    ],
+    "series": "Гарри Поттер",
+    "series_part": 6,
+    "cover_url": ""
+  },
+  {
+    "id": 7,
+    "title": "Гарри Поттер и Дары Смерти",
+    "author": "Дж. К. Роулинг",
+    "aliases": [],
+    "pages": 607,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "wilderness",
+      "psych_tension"
+    ],
+    "series": "Гарри Поттер",
+    "series_part": 7,
+    "cover_url": ""
+  },
+  {
+    "id": 8,
+    "title": "Голодные игры",
+    "author": "Сьюзен Коллинз",
+    "aliases": [
+      "hunger games"
+    ],
+    "pages": 416,
+    "tags": [
+      "dystopia",
+      "rebellion",
+      "wilderness",
+      "psych_tension",
+      "friendship_team"
+    ],
+    "series": "Голодные игры",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 9,
+    "title": "И вспыхнет пламя",
+    "author": "Сьюзен Коллинз",
+    "aliases": [],
+    "pages": 391,
+    "tags": [
+      "dystopia",
+      "rebellion",
+      "psych_tension",
+      "friendship_team",
+      "court_intrigue"
+    ],
+    "series": "Голодные игры",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 10,
+    "title": "Сойка-пересмешница",
+    "author": "Сьюзен Коллинз",
+    "aliases": [],
+    "pages": 390,
+    "tags": [
+      "dystopia",
+      "rebellion",
+      "wilderness",
+      "psych_tension",
+      "friendship_team"
+    ],
+    "series": "Голодные игры",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 11,
+    "title": "Ночной дозор",
+    "author": "Сергей Лукьяненко",
+    "aliases": [],
+    "pages": 384,
+    "tags": [
+      "magic_rituals",
+      "investigation",
+      "psych_tension",
+      "dystopia",
+      "rebellion"
+    ],
+    "series": "Дозоры",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 12,
+    "title": "Дневной дозор",
+    "author": "Сергей Лукьяненко",
+    "aliases": [],
+    "pages": 352,
+    "tags": [
+      "magic_rituals",
+      "investigation",
+      "psych_tension",
+      "friendship_team",
+      "court_intrigue"
+    ],
+    "series": "Дозоры",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 13,
+    "title": "Лев, колдунья и платяной шкаф",
+    "author": "К. С. Льюis",
+    "aliases": [],
+    "pages": 206,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "wilderness",
+      "first_love"
+    ],
+    "series": "Хроники Нарнии",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 14,
+    "title": "Принц Касpian",
+    "author": "К. С. Льюis",
+    "aliases": [],
+    "pages": 223,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "court_intrigue",
+      "wilderness"
+    ],
+    "series": "Хроники Нарнии",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 15,
+    "title": "Покоритель Зари",
+    "author": "К. С. Льюis",
+    "aliases": [],
+    "pages": 248,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "wilderness",
+      "investigation",
+      "rebellion"
+    ],
+    "series": "Хроники Нарнии",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 16,
+    "title": "Серебряный стул",
+    "author": "К. С. Льюis",
+    "aliases": [],
+    "pages": 243,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "psych_tension",
+      "wilderness"
+    ],
+    "series": "Хроники Нарнии",
+    "series_part": 4,
+    "cover_url": ""
+  },
+  {
+    "id": 17,
+    "title": "Конь и его мальчик",
+    "author": "К. С. Льюis",
+    "aliases": [],
+    "pages": 224,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "court_intrigue",
+      "first_love"
+    ],
+    "series": "Хроники Нарнии",
+    "series_part": 5,
+    "cover_url": ""
+  },
+  {
+    "id": 18,
+    "title": "Племянник чародея",
+    "author": "К. С. Льюis",
+    "aliases": [],
+    "pages": 195,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "time_travel",
+      "psych_tension"
+    ],
+    "series": "Хроники Нарнии",
+    "series_part": 6,
+    "cover_url": ""
+  },
+  {
+    "id": 19,
+    "title": "Последняя битва",
+    "author": "К. С. Льюis",
+    "aliases": [],
+    "pages": 211,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "dystopia",
+      "psych_tension"
+    ],
+    "series": "Хроники Нарнии",
+    "series_part": 7,
+    "cover_url": ""
+  },
+  {
+    "id": 20,
+    "title": "Похититель молнии",
+    "author": "Rick Riordan",
+    "aliases": [],
+    "pages": 377,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "investigation",
+      "school_life"
+    ],
+    "series": "Пercy Jackson",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 21,
+    "title": "Море монстров",
+    "author": "Rick Riordan",
+    "aliases": [],
+    "pages": 279,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "wilderness",
+      "rebellion",
+      "investigation"
+    ],
+    "series": "Пercy Jackson",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 22,
+    "title": "Проклятие Титана",
+    "author": "Rick Riordan",
+    "aliases": [],
+    "pages": 312,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "psych_tension",
+      "rebellion",
+      "investigation"
+    ],
+    "series": "Пercy Jackson",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 23,
+    "title": "Битва за Лабиринт",
+    "author": "Rick Riordan",
+    "aliases": [],
+    "pages": 361,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "investigation",
+      "rebellion",
+      "psych_tension"
+    ],
+    "series": "Пercy Jackson",
+    "series_part": 4,
+    "cover_url": ""
+  },
+  {
+    "id": 24,
+    "title": "Последний олимпиец",
+    "author": "Rick Riordan",
+    "aliases": [],
+    "pages": 381,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "dystopia",
+      "psych_tension"
+    ],
+    "series": "Пercy Jackson",
+    "series_part": 5,
+    "cover_url": ""
+  },
+  {
+    "id": 25,
+    "title": "Дивергент",
+    "author": "Veronica Roth",
+    "aliases": [],
+    "pages": 487,
+    "tags": [
+      "dystopia",
+      "rebellion",
+      "friendship_team",
+      "psych_tension",
+      "first_love"
+    ],
+    "series": "Дivergent",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 26,
+    "title": "Восстание",
+    "author": "Veronica Roth",
+    "aliases": [],
+    "pages": 525,
+    "tags": [
+      "dystopia",
+      "rebellion",
+      "friendship_team",
+      "psych_tension",
+      "investigation"
+    ],
+    "series": "Дivergent",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 27,
+    "title": "Алlegiant",
+    "author": "Veronica Roth",
+    "aliases": [],
+    "pages": 526,
+    "tags": [
+      "dystopia",
+      "rebellion",
+      "psych_tension",
+      "family_secrets",
+      "friendship_team"
+    ],
+    "series": "Дivergent",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 28,
+    "title": "Бегущий в лабиринте",
+    "author": "James Dashner",
+    "aliases": [],
+    "pages": 375,
+    "tags": [
+      "dystopia",
+      "friendship_team",
+      "psych_tension",
+      "investigation",
+      "rebellion"
+    ],
+    "series": "Бегущий в лабиринте",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 29,
+    "title": "Испытание огнём",
+    "author": "James Dashner",
+    "aliases": [],
+    "pages": 362,
+    "tags": [
+      "dystopia",
+      "wilderness",
+      "friendship_team",
+      "psych_tension",
+      "rebellion"
+    ],
+    "series": "Бегущий в лабиринте",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 30,
+    "title": "Лекарство от смерти",
+    "author": "James Dashner",
+    "aliases": [],
+    "pages": 325,
+    "tags": [
+      "dystopia",
+      "investigation",
+      "psych_tension",
+      "friendship_team",
+      "rebellion"
+    ],
+    "series": "Бегущий в лабиринте",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 31,
+    "title": "Сумерки",
+    "author": "Stephenie Meyer",
+    "aliases": [],
+    "pages": 498,
+    "tags": [
+      "first_love",
+      "magic_rituals",
+      "psych_tension",
+      "family_secrets",
+      "rebellion"
+    ],
+    "series": "Сумерки",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 32,
+    "title": "Новолуние",
+    "author": "Stephenie Meyer",
+    "aliases": [],
+    "pages": 563,
+    "tags": [
+      "first_love",
+      "magic_rituals",
+      "psych_tension",
+      "friendship_team",
+      "rebellion"
+    ],
+    "series": "Сумерки",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 33,
+    "title": "Затмение",
+    "author": "Stephenie Meyer",
+    "aliases": [],
+    "pages": 629,
+    "tags": [
+      "first_love",
+      "magic_rituals",
+      "psych_tension",
+      "rebellion",
+      "friendship_team"
+    ],
+    "series": "Сумерки",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 34,
+    "title": "РassBreaking Dawn",
+    "author": "Stephenie Meyer",
+    "aliases": [],
+    "pages": 756,
+    "tags": [
+      "first_love",
+      "magic_rituals",
+      "psych_tension",
+      "family_secrets",
+      "rebellion"
+    ],
+    "series": "Сумерки",
+    "series_part": 4,
+    "cover_url": ""
+  },
+  {
+    "id": 35,
+    "title": "Дом, в котором",
+    "author": "Мариам Петросян",
+    "aliases": [],
+    "pages": 960,
+    "tags": [
+      "school_life",
+      "psych_tension",
+      "friendship_team",
+      "family_secrets",
+      "rebellion"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 36,
+    "title": "Тьма и другие сны",
+    "author": "Мариам Петросян",
+    "aliases": [],
+    "pages": 320,
+    "tags": [
+      "psych_tension",
+      "family_secrets",
+      "first_love",
+      "school_life",
+      "friendship_team"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 37,
+    "title": "1984",
+    "author": "Джордж Оруэлл",
+    "aliases": [],
+    "pages": 328,
+    "tags": [
+      "dystopia",
+      "psych_tension",
+      "rebellion",
+      "investigation",
+      "family_secrets"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 38,
+    "title": "451 градус по Фаренгейту",
+    "author": "Рэй Брэдбери",
+    "aliases": [],
+    "pages": 249,
+    "tags": [
+      "dystopia",
+      "rebellion",
+      "psych_tension",
+      "magic_rituals",
+      "family_secrets"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 39,
+    "title": "Мастер и Маргарита",
+    "author": "Михаил Булgakov",
+    "aliases": [],
+    "pages": 480,
+    "tags": [
+      "magic_rituals",
+      "court_intrigue",
+      "rebellion",
+      "psych_tension",
+      "family_secrets"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 40,
+    "title": "Остров проклятых",
+    "author": "Денис Лихан",
+    "aliases": [],
+    "pages": 320,
+    "tags": [
+      "investigation",
+      "psych_tension",
+      "family_secrets",
+      "dystopia",
+      "rebellion"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 41,
+    "title": "Виноваты звёзды",
+    "author": "John Green",
+    "aliases": [],
+    "pages": 313,
+    "tags": [
+      "first_love",
+      "psych_tension",
+      "friendship_team",
+      "family_secrets",
+      "rebellion"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 42,
+    "title": "Бумажные города",
+    "author": "John Green",
+    "aliases": [],
+    "pages": 305,
+    "tags": [
+      "investigation",
+      "first_love",
+      "friendship_team",
+      "psych_tension",
+      "school_life"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 43,
+    "title": "Анна и французский поцелуй",
+    "author": "Stephanie Perkins",
+    "aliases": [],
+    "pages": 372,
+    "tags": [
+      "first_love",
+      "school_life",
+      "friendship_team",
+      "psych_tension",
+      "rebellion"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 44,
+    "title": "Город костей",
+    "author": "Cassandra Clare",
+    "aliases": [],
+    "pages": 485,
+    "tags": [
+      "magic_rituals",
+      "investigation",
+      "first_love",
+      "friendship_team",
+      "psych_tension"
+    ],
+    "series": "Орудия смерти",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 45,
+    "title": "Город пепла",
+    "author": "Cassandra Clare",
+    "aliases": [],
+    "pages": 453,
+    "tags": [
+      "magic_rituals",
+      "investigation",
+      "rebellion",
+      "friendship_team",
+      "psych_tension"
+    ],
+    "series": "Орудия смерти",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 46,
+    "title": "Город стекла",
+    "author": "Cassandra Clare",
+    "aliases": [],
+    "pages": 541,
+    "tags": [
+      "magic_rituals",
+      "investigation",
+      "rebellion",
+      "friendship_team",
+      "court_intrigue"
+    ],
+    "series": "Орудия смерти",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 47,
+    "title": "Первому игроку приготовиться",
+    "author": "Ernest Cline",
+    "aliases": [
+      "ready player one"
+    ],
+    "pages": 374,
+    "tags": [
+      "dystopia",
+      "friendship_team",
+      "rebellion",
+      "magic_rituals",
+      "psych_tension"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 48,
+    "title": "Дом странных детей",
+    "author": "Ransom Riggs",
+    "aliases": [],
+    "pages": 352,
+    "tags": [
+      "magic_rituals",
+      "investigation",
+      "psych_tension",
+      "friendship_team",
+      "time_travel"
+    ],
+    "series": "Дом странных детей",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 49,
+    "title": "Элеven",
+    "author": "Pittacus Lore",
+    "aliases": [],
+    "pages": 440,
+    "tags": [
+      "dystopia",
+      "friendship_team",
+      "rebellion",
+      "school_life",
+      "first_love"
+    ],
+    "series": "Лорien",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 50,
+    "title": "Двенадцать",
+    "author": "Pittacus Lore",
+    "aliases": [],
+    "pages": 392,
+    "tags": [
+      "dystopia",
+      "friendship_team",
+      "rebellion",
+      "investigation",
+      "psych_tension"
+    ],
+    "series": "Лорien",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 51,
+    "title": "Тринадцать",
+    "author": "Pittacus Lore",
+    "aliases": [],
+    "pages": 401,
+    "tags": [
+      "dystopia",
+      "friendship_team",
+      "rebellion",
+      "investigation",
+      "psych_tension"
+    ],
+    "series": "Лорien",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 52,
+    "title": "Я — четвёртый",
+    "author": "Pittacus Lore",
+    "aliases": [],
+    "pages": 360,
+    "tags": [
+      "dystopia",
+      "friendship_team",
+      "rebellion",
+      "school_life",
+      "first_love"
+    ],
+    "series": "Лорien",
+    "series_part": 4,
+    "cover_url": ""
+  },
+  {
+    "id": 53,
+    "title": "Пять",
+    "author": "Pittacus Lore",
+    "aliases": [],
+    "pages": 416,
+    "tags": [
+      "dystopia",
+      "friendship_team",
+      "rebellion",
+      "wilderness",
+      "psych_tension"
+    ],
+    "series": "Лорien",
+    "series_part": 5,
+    "cover_url": ""
+  },
+  {
+    "id": 54,
+    "title": "Надломленная птица",
+    "author": "Ransom Riggs",
+    "aliases": [],
+    "pages": 384,
+    "tags": [
+      "magic_rituals",
+      "investigation",
+      "psych_tension",
+      "friendship_team",
+      "time_travel"
+    ],
+    "series": "Дом странных детей",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 55,
+    "title": "Библиотека душ",
+    "author": "Ransom Riggs",
+    "aliases": [],
+    "pages": 416,
+    "tags": [
+      "magic_rituals",
+      "investigation",
+      "psych_tension",
+      "friendship_team",
+      "family_secrets"
+    ],
+    "series": "Дом странных детей",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 56,
+    "title": "Но всему приходит конец",
+    "author": "Ransom Riggs",
+    "aliases": [],
+    "pages": 448,
+    "tags": [
+      "magic_rituals",
+      "investigation",
+      "psych_tension",
+      "friendship_team",
+      "rebellion"
+    ],
+    "series": "Дом странных детей",
+    "series_part": 4,
+    "cover_url": ""
+  },
+  {
+    "id": 57,
+    "title": "Письма с острова Нantucket",
+    "author": "Jenny Han",
+    "aliases": [],
+    "pages": 304,
+    "tags": [
+      "first_love",
+      "school_life",
+      "friendship_team",
+      "family_secrets",
+      "psych_tension"
+    ],
+    "series": "To All the Boys",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 58,
+    "title": "П.S. Всё ещё люблю тебя",
+    "author": "Jenny Han",
+    "aliases": [],
+    "pages": 337,
+    "tags": [
+      "first_love",
+      "school_life",
+      "friendship_team",
+      "family_secrets",
+      "psych_tension"
+    ],
+    "series": "To All the Boys",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 59,
+    "title": "Всегда и навсегда, Лara",
+    "author": "Jenny Han",
+    "aliases": [],
+    "pages": 336,
+    "tags": [
+      "first_love",
+      "school_life",
+      "friendship_team",
+      "family_secrets",
+      "rebellion"
+    ],
+    "series": "To All the Boys",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 60,
+    "title": "Ищи меня",
+    "author": "John Green",
+    "aliases": [],
+    "pages": 305,
+    "tags": [
+      "investigation",
+      "first_love",
+      "friendship_team",
+      "psych_tension",
+      "school_life"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 61,
+    "title": "Калика",
+    "author": "John Green",
+    "aliases": [],
+    "pages": 278,
+    "tags": [
+      "psych_tension",
+      "school_life",
+      "friendship_team",
+      "first_love",
+      "rebellion"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 62,
+    "title": "Ночь в саду",
+    "author": "John Green",
+    "aliases": [],
+    "pages": 326,
+    "tags": [
+      "psych_tension",
+      "investigation",
+      "friendship_team",
+      "school_life",
+      "rebellion"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 63,
+    "title": "Убийство в «Восточном экспрессе»",
+    "author": "Agatha Christie",
+    "aliases": [],
+    "pages": 256,
+    "tags": [
+      "investigation",
+      "psych_tension",
+      "court_intrigue",
+      "family_secrets",
+      "friendship_team"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 64,
+    "title": "Десять негритят",
+    "author": "Agatha Christie",
+    "aliases": [],
+    "pages": 272,
+    "tags": [
+      "investigation",
+      "psych_tension",
+      "wilderness",
+      "family_secrets",
+      "rebellion"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 65,
+    "title": "Загадочное происшествие в Стайле",
+    "author": "Agatha Christie",
+    "aliases": [],
+    "pages": 288,
+    "tags": [
+      "investigation",
+      "psych_tension",
+      "school_life",
+      "friendship_team",
+      "family_secrets"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 66,
+    "title": "Эtюд в багровых тонах",
+    "author": "Arthur Conan Doyle",
+    "aliases": [],
+    "pages": 176,
+    "tags": [
+      "investigation",
+      "psych_tension",
+      "friendship_team",
+      "rebellion",
+      "court_intrigue"
+    ],
+    "series": "Шерlock Holmes",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 67,
+    "title": "Собака Baskervilles",
+    "author": "Arthur Conan Doyle",
+    "aliases": [],
+    "pages": 256,
+    "tags": [
+      "investigation",
+      "psych_tension",
+      "wilderness",
+      "family_secrets",
+      "friendship_team"
+    ],
+    "series": "Шерlock Holmes",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 68,
+    "title": "Знак четырёх",
+    "author": "Arthur Conan Doyle",
+    "aliases": [],
+    "pages": 224,
+    "tags": [
+      "investigation",
+      "psych_tension",
+      "friendship_team",
+      "family_secrets",
+      "rebellion"
+    ],
+    "series": "Шерlock Holmes",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 69,
+    "title": "Тень и кость",
+    "author": "Leigh Bardugo",
+    "aliases": [],
+    "pages": 358,
+    "tags": [
+      "magic_rituals",
+      "rebellion",
+      "friendship_team",
+      "first_love",
+      "court_intrigue"
+    ],
+    "series": "Grisha",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 70,
+    "title": "Siege and Storm",
+    "author": "Leigh Bardugo",
+    "aliases": [],
+    "pages": 427,
+    "tags": [
+      "magic_rituals",
+      "rebellion",
+      "friendship_team",
+      "psych_tension",
+      "wilderness"
+    ],
+    "series": "Grisha",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 71,
+    "title": "Ruin and Rising",
+    "author": "Leigh Bardugo",
+    "aliases": [],
+    "pages": 416,
+    "tags": [
+      "magic_rituals",
+      "rebellion",
+      "friendship_team",
+      "psych_tension",
+      "dystopia"
+    ],
+    "series": "Grisha",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 72,
+    "title": "Шесть воронов",
+    "author": "Leigh Bardugo",
+    "aliases": [],
+    "pages": 465,
+    "tags": [
+      "investigation",
+      "rebellion",
+      "friendship_team",
+      "psych_tension",
+      "magic_rituals"
+    ],
+    "series": "Six of Crows",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 73,
+    "title": "Кroшka с большой дороги",
+    "author": "Nikolai Gogol",
+    "aliases": [],
+    "pages": 128,
+    "tags": [
+      "court_intrigue",
+      "psych_tension",
+      "family_secrets",
+      "rebellion",
+      "first_love"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 74,
+    "title": "Маленький prince",
+    "author": "Antoine de Saint-Exupéry",
+    "aliases": [
+      "маленький prince"
+    ],
+    "pages": 96,
+    "tags": [
+      "first_love",
+      "friendship_team",
+      "wilderness",
+      "magic_rituals",
+      "psych_tension"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 75,
+    "title": "Преступление и наказание",
+    "author": "Фёдор Достoevsky",
+    "aliases": [],
+    "pages": 671,
+    "tags": [
+      "psych_tension",
+      "investigation",
+      "rebellion",
+      "family_secrets",
+      "first_love"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 76,
+    "title": "Мы",
+    "author": "Евгений Zamyatin",
+    "aliases": [],
+    "pages": 256,
+    "tags": [
+      "dystopia",
+      "rebellion",
+      "psych_tension",
+      "first_love",
+      "friendship_team"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 77,
+    "title": "Атлант расправил плечи",
+    "author": "Ayn Rand",
+    "aliases": [],
+    "pages": 1168,
+    "tags": [
+      "dystopia",
+      "rebellion",
+      "psych_tension",
+      "first_love",
+      "investigation"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 78,
+    "title": "Пикник на обочине",
+    "author": "Arkady and Boris Strugatsky",
+    "aliases": [],
+    "pages": 288,
+    "tags": [
+      "dystopia",
+      "investigation",
+      "psych_tension",
+      "magic_rituals",
+      "friendship_team"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 79,
+    "title": "Трудно быть бogом",
+    "author": "Arkady and Boris Strugatsky",
+    "aliases": [],
+    "pages": 224,
+    "tags": [
+      "dystopia",
+      "time_travel",
+      "psych_tension",
+      "rebellion",
+      "investigation"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 80,
+    "title": "Метро 2033",
+    "author": "Dmitry Glukhovsky",
+    "aliases": [],
+    "pages": 458,
+    "tags": [
+      "dystopia",
+      "wilderness",
+      "psych_tension",
+      "investigation",
+      "friendship_team"
+    ],
+    "series": "Метро",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 81,
+    "title": "Метро 2034",
+    "author": "Dmitry Glukhovsky",
+    "aliases": [],
+    "pages": 320,
+    "tags": [
+      "dystopia",
+      "wilderness",
+      "psych_tension",
+      "investigation",
+      "rebellion"
+    ],
+    "series": "Метро",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 82,
+    "title": "Метро 2035",
+    "author": "Dmitry Glukhovsky",
+    "aliases": [],
+    "pages": 384,
+    "tags": [
+      "dystopia",
+      "wilderness",
+      "psych_tension",
+      "rebellion",
+      "investigation"
+    ],
+    "series": "Метро",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 83,
+    "title": "Эраgon",
+    "author": "Christopher Paolini",
+    "aliases": [],
+    "pages": 509,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "wilderness",
+      "first_love"
+    ],
+    "series": "Наследие",
+    "series_part": 1,
+    "cover_url": ""
+  },
+  {
+    "id": 84,
+    "title": "Эldest",
+    "author": "Christopher Paolini",
+    "aliases": [],
+    "pages": 694,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "wilderness",
+      "psych_tension"
+    ],
+    "series": "Наследие",
+    "series_part": 2,
+    "cover_url": ""
+  },
+  {
+    "id": 85,
+    "title": "Brisingr",
+    "author": "Christopher Paolini",
+    "aliases": [],
+    "pages": 748,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "wilderness",
+      "court_intrigue"
+    ],
+    "series": "Наследие",
+    "series_part": 3,
+    "cover_url": ""
+  },
+  {
+    "id": 86,
+    "title": "Inheritance",
+    "author": "Christopher Paolini",
+    "aliases": [],
+    "pages": 860,
+    "tags": [
+      "magic_rituals",
+      "friendship_team",
+      "rebellion",
+      "wilderness",
+      "dystopia"
+    ],
+    "series": "Наследие",
+    "series_part": 4,
+    "cover_url": ""
+  },
+  {
+    "id": 87,
+    "title": "Спеши любить",
+    "author": "Nicholas Sparks",
+    "aliases": [],
+    "pages": 206,
+    "tags": [
+      "first_love",
+      "psych_tension",
+      "family_secrets",
+      "friendship_team",
+      "rebellion"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 88,
+    "title": "Дневник памяти",
+    "author": "Nicholas Sparks",
+    "aliases": [],
+    "pages": 214,
+    "tags": [
+      "first_love",
+      "psych_tension",
+      "family_secrets",
+      "friendship_team",
+      "rebellion"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 89,
+    "title": "Спеши любить",
+    "author": "Nicholas Sparks",
+    "aliases": [],
+    "pages": 206,
+    "tags": [
+      "first_love",
+      "psych_tension",
+      "family_secrets",
+      "friendship_team",
+      "rebellion"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 90,
+    "title": "Граф Monte Cristo",
+    "author": "Alexandre Dumas",
+    "aliases": [],
+    "pages": 1056,
+    "tags": [
+      "rebellion",
+      "investigation",
+      "court_intrigue",
+      "family_secrets",
+      "friendship_team"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 91,
+    "title": "Граф Monte Cristo",
+    "author": "Alexandre Dumas",
+    "aliases": [
+      "monte cristo"
+    ],
+    "pages": 1056,
+    "tags": [
+      "rebellion",
+      "investigation",
+      "court_intrigue",
+      "family_secrets",
+      "friendship_team"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 92,
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "aliases": [],
+    "pages": 532,
+    "tags": [
+      "first_love",
+      "psych_tension",
+      "family_secrets",
+      "rebellion",
+      "friendship_team"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 93,
+    "title": "Гордость и предубеждение",
+    "author": "Jane Austen",
+    "aliases": [],
+    "pages": 432,
+    "tags": [
+      "first_love",
+      "court_intrigue",
+      "family_secrets",
+      "friendship_team",
+      "psych_tension"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 94,
+    "title": "Emma",
+    "author": "Jane Austen",
+    "aliases": [],
+    "pages": 474,
+    "tags": [
+      "first_love",
+      "court_intrigue",
+      "family_secrets",
+      "friendship_team",
+      "psych_tension"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 95,
+    "title": "Унесённые ветром",
+    "author": "Margaret Mitchell",
+    "aliases": [],
+    "pages": 1037,
+    "tags": [
+      "first_love",
+      "court_intrigue",
+      "rebellion",
+      "psych_tension",
+      "family_secrets"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 96,
+    "title": "Унесённые ветром",
+    "author": "Margaret Mitchell",
+    "aliases": [],
+    "pages": 1037,
+    "tags": [
+      "first_love",
+      "rebellion",
+      "psych_tension",
+      "family_secrets",
+      "court_intrigue"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 97,
+    "title": "Лolita",
+    "author": "Vladimir Nabokov",
+    "aliases": [],
+    "pages": 336,
+    "tags": [
+      "psych_tension",
+      "first_love",
+      "family_secrets",
+      "investigation",
+      "rebellion"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 98,
+    "title": "Лolita",
+    "author": "Vladimir Nabokov",
+    "aliases": [],
+    "pages": 336,
+    "tags": [
+      "psych_tension",
+      "first_love",
+      "family_secrets",
+      "investigation",
+      "rebellion"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 99,
+    "title": "Fahrenheit",
+    "author": "Ray Bradbury",
+    "aliases": [],
+    "pages": 249,
+    "tags": [
+      "dystopia",
+      "rebellion",
+      "psych_tension",
+      "magic_rituals",
+      "family_secrets"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  },
+  {
+    "id": 100,
+    "title": "Собачье сердце",
+    "author": "Mikhail Bulgakov",
+    "aliases": [],
+    "pages": 128,
+    "tags": [
+      "magic_rituals",
+      "psych_tension",
+      "rebellion",
+      "dystopia",
+      "family_secrets"
+    ],
+    "series": null,
+    "series_part": null,
+    "cover_url": ""
+  }
+]

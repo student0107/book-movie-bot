@@ -1,0 +1,1707 @@
+[
+  {
+    "id": 1,
+    "kind": "film",
+    "title": "Титаник",
+    "year": 1997,
+    "minutes": 194,
+    "director": "Джеймс Кэмерон",
+    "aliases": [
+      "titanic"
+    ],
+    "tags": [
+      "drama_melodrama",
+      "historical"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 2,
+    "kind": "film",
+    "title": "Гордость и предубеждение",
+    "year": 2005,
+    "minutes": 129,
+    "director": "Джо Райт",
+    "aliases": [
+      "pride and prejudice",
+      "гордость и предупреждение"
+    ],
+    "tags": [
+      "drama_melodrama",
+      "historical"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 3,
+    "kind": "film",
+    "title": "10 причин моей ненависти",
+    "year": 1999,
+    "minutes": 97,
+    "director": "Gil Junger",
+    "aliases": [
+      "10 things i hate about you"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 4,
+    "kind": "film",
+    "title": "La La Land",
+    "year": 2016,
+    "minutes": 128,
+    "director": "Damien Chazelle",
+    "aliases": [
+      "la la land",
+      "ла ла ленд"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 5,
+    "kind": "film",
+    "title": "До встречи с тобой",
+    "year": 2016,
+    "minutes": 110,
+    "director": "Thea Sharrock",
+    "aliases": [
+      "me before you"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 6,
+    "kind": "film",
+    "title": "Предложение",
+    "year": 2009,
+    "minutes": 108,
+    "director": "Anne Fletcher",
+    "aliases": [
+      "the proposal"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 7,
+    "kind": "film",
+    "title": "Пурпурные сердца",
+    "year": 2022,
+    "minutes": 122,
+    "director": "Elizabeth Allen",
+    "aliases": [
+      "purple hearts",
+      "пурпурные цвета"
+    ],
+    "tags": [
+      "drama_melodrama",
+      "historical"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 8,
+    "kind": "film",
+    "title": "Как отделаться от парня за 10 дней",
+    "year": 2003,
+    "minutes": 116,
+    "director": "Donald Petrie",
+    "aliases": [
+      "how to lose a guy in 10 days"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 9,
+    "kind": "film",
+    "title": "Сид и Нэнси",
+    "year": 1986,
+    "minutes": 112,
+    "director": "Alex Cox",
+    "aliases": [
+      "sid and nancy"
+    ],
+    "tags": [
+      "drama_melodrama",
+      "historical"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 10,
+    "kind": "film",
+    "title": "Ловушка для родителей",
+    "year": 1998,
+    "minutes": 117,
+    "director": "Nancy Meyers",
+    "aliases": [
+      "the parent trap"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 11,
+    "kind": "film",
+    "title": "Век Аделин",
+    "year": 2008,
+    "minutes": 166,
+    "director": "David Fincher",
+    "aliases": [
+      "the curious case of benjamin button",
+      "век аделин"
+    ],
+    "tags": [
+      "drama_melodrama",
+      "scifi_fantasy"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 12,
+    "kind": "film",
+    "title": "Искупление",
+    "year": 2007,
+    "minutes": 123,
+    "director": "Joe Wright",
+    "aliases": [
+      "atonement"
+    ],
+    "tags": [
+      "drama_melodrama",
+      "historical",
+      "detective"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 13,
+    "kind": "film",
+    "title": "Ноттинг Хилл",
+    "year": 1999,
+    "minutes": 124,
+    "director": "Roger Michell",
+    "aliases": [
+      "notting hill"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 14,
+    "kind": "film",
+    "title": "Знакомьтесь, Джо Блэк",
+    "year": 1998,
+    "minutes": 178,
+    "director": "Martin Brest",
+    "aliases": [
+      "meet joe black"
+    ],
+    "tags": [
+      "drama_melodrama",
+      "scifi_fantasy"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 15,
+    "kind": "film",
+    "title": "Красотка",
+    "year": 1990,
+    "minutes": 119,
+    "director": "Garry Marshall",
+    "aliases": [
+      "pretty woman"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 16,
+    "kind": "film",
+    "title": "Завтрак у Тиффани",
+    "year": 1961,
+    "minutes": 115,
+    "director": "Blake Edwards",
+    "aliases": [
+      "breakfast at tiffany"
+    ],
+    "tags": [
+      "drama_melodrama",
+      "historical"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 17,
+    "kind": "film",
+    "title": "Притворись моей женой",
+    "year": 2011,
+    "minutes": 117,
+    "director": "Dennis Dugan",
+    "aliases": [
+      "just go with it"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 18,
+    "kind": "film",
+    "title": "Люди в чёрном",
+    "year": 1997,
+    "minutes": 98,
+    "director": "Barry Sonnenfeld",
+    "aliases": [
+      "men in black"
+    ],
+    "tags": [
+      "scifi_fantasy"
+    ],
+    "poster_url": "",
+    "franchise": "Люди в чёрном",
+    "franchise_part": 1
+  },
+  {
+    "id": 19,
+    "kind": "film",
+    "title": "Дева и дракон",
+    "year": 2020,
+    "minutes": 103,
+    "director": "Paul W.S. Anderson",
+    "aliases": [
+      "monster hunter"
+    ],
+    "tags": [
+      "scifi_fantasy"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 20,
+    "kind": "film",
+    "title": "Грань будущего",
+    "year": 2014,
+    "minutes": 113,
+    "director": "Doug Liman",
+    "aliases": [
+      "edge of tomorrow"
+    ],
+    "tags": [
+      "scifi_fantasy"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 21,
+    "kind": "film",
+    "title": "Сияние",
+    "year": 1980,
+    "minutes": 146,
+    "director": "Stanley Kubrick",
+    "aliases": [
+      "the shining"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 22,
+    "kind": "film",
+    "title": "Нечто",
+    "year": 1982,
+    "minutes": 109,
+    "director": "John Carpenter",
+    "aliases": [
+      "the thing"
+    ],
+    "tags": [
+      "thriller_horror",
+      "scifi_fantasy"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 23,
+    "kind": "film",
+    "title": "Изгоняющий дьявола",
+    "year": 1973,
+    "minutes": 122,
+    "director": "William Friedkin",
+    "aliases": [
+      "the exorcist"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Изгоняющий дьявола",
+    "franchise_part": 1
+  },
+  {
+    "id": 24,
+    "kind": "film",
+    "title": "Чужой",
+    "year": 1979,
+    "minutes": 117,
+    "director": "Ridley Scott",
+    "aliases": [
+      "alien"
+    ],
+    "tags": [
+      "thriller_horror",
+      "scifi_fantasy"
+    ],
+    "poster_url": "",
+    "franchise": "Чужой",
+    "franchise_part": 1
+  },
+  {
+    "id": 25,
+    "kind": "film",
+    "title": "Звонок",
+    "year": 2002,
+    "minutes": 115,
+    "director": "Gore Verbinski",
+    "aliases": [
+      "the ring"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Звонок",
+    "franchise_part": 1
+  },
+  {
+    "id": 26,
+    "kind": "film",
+    "title": "28 дней спустя",
+    "year": 2002,
+    "minutes": 113,
+    "director": "Danny Boyle",
+    "aliases": [
+      "28 days later"
+    ],
+    "tags": [
+      "thriller_horror",
+      "scifi_fantasy"
+    ],
+    "poster_url": "",
+    "franchise": "28 дней",
+    "franchise_part": 1
+  },
+  {
+    "id": 27,
+    "kind": "film",
+    "title": "Обсессия",
+    "year": 2019,
+    "minutes": 88,
+    "director": "Fred Durst",
+    "aliases": [
+      "the fanatic"
+    ],
+    "tags": [
+      "thriller_horror",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 28,
+    "kind": "film",
+    "title": "Матильда",
+    "year": 1996,
+    "minutes": 98,
+    "director": "Danny DeVito",
+    "aliases": [
+      "matilda"
+    ],
+    "tags": [
+      "drama_melodrama",
+      "scifi_fantasy"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 29,
+    "kind": "film",
+    "title": "Тело Дженнифер",
+    "year": 2009,
+    "minutes": 102,
+    "director": "Karyn Kusama",
+    "aliases": [
+      "jennifers body"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 30,
+    "kind": "film",
+    "title": "Чёрный лебедь",
+    "year": 2010,
+    "minutes": 108,
+    "director": "Darren Aronofsky",
+    "aliases": [
+      "black swan"
+    ],
+    "tags": [
+      "thriller_horror",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 31,
+    "kind": "film",
+    "title": "Париж, город мёртвых",
+    "year": 2019,
+    "minutes": 97,
+    "director": "Matthias Hoene",
+    "aliases": [
+      "paris wilts"
+    ],
+    "tags": [
+      "thriller_horror",
+      "scifi_fantasy"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 32,
+    "kind": "film",
+    "title": "30 дней ночи",
+    "year": 2007,
+    "minutes": 113,
+    "director": "David Slade",
+    "aliases": [
+      "30 days of night",
+      "цыпочка"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 33,
+    "kind": "film",
+    "title": "Исходный код",
+    "year": 2011,
+    "minutes": 93,
+    "director": "Duncan Jones",
+    "aliases": [
+      "source code",
+      "временная петля"
+    ],
+    "tags": [
+      "scifi_fantasy",
+      "detective"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 34,
+    "kind": "film",
+    "title": "Дракула",
+    "year": 1992,
+    "minutes": 128,
+    "director": "Francis Ford Coppola",
+    "aliases": [
+      "bram stokers dracula"
+    ],
+    "tags": [
+      "thriller_horror",
+      "historical"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 35,
+    "kind": "film",
+    "title": "Send Help",
+    "year": 2025,
+    "minutes": 95,
+    "director": "Sam Raimi",
+    "aliases": [
+      "send help",
+      "сенд хелп"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 36,
+    "kind": "film",
+    "title": "Оно",
+    "year": 2017,
+    "minutes": 135,
+    "director": "Andy Muschietti",
+    "aliases": [
+      "it"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Оно",
+    "franchise_part": 1
+  },
+  {
+    "id": 37,
+    "kind": "film",
+    "title": "Хэллоуин",
+    "year": 1978,
+    "minutes": 91,
+    "director": "John Carpenter",
+    "aliases": [
+      "halloween",
+      "хеллоуин ночной кошмар"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Хэллоуин",
+    "franchise_part": 1
+  },
+  {
+    "id": 38,
+    "kind": "film",
+    "title": "Заклятие",
+    "year": 2013,
+    "minutes": 112,
+    "director": "James Wan",
+    "aliases": [
+      "the conjuring"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Заклятие",
+    "franchise_part": 1
+  },
+  {
+    "id": 39,
+    "kind": "film",
+    "title": "Последнее изгнание дьявола",
+    "year": 2010,
+    "minutes": 87,
+    "director": "Adam Wingard",
+    "aliases": [
+      "the last exorcism"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Изгнание дьявола",
+    "franchise_part": 2
+  },
+  {
+    "id": 40,
+    "kind": "film",
+    "title": "Охотники за нечистью",
+    "year": 1985,
+    "minutes": 106,
+    "director": "Tom Holland",
+    "aliases": [
+      "fright night",
+      "маленькие укусы"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Охотники за нечистью",
+    "franchise_part": 1
+  },
+  {
+    "id": 41,
+    "kind": "film",
+    "title": "Страшные истории для рассказа в темноте",
+    "year": 2019,
+    "minutes": 108,
+    "director": "André Øvredal",
+    "aliases": [
+      "scary stories to tell in the dark"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 42,
+    "kind": "film",
+    "title": "Не дыши",
+    "year": 2016,
+    "minutes": 89,
+    "director": "Fede Álvarez",
+    "aliases": [
+      "dont breathe"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Не дыши",
+    "franchise_part": 1
+  },
+  {
+    "id": 43,
+    "kind": "film",
+    "title": "Кукловод",
+    "year": 1988,
+    "minutes": 87,
+    "director": "Tom Holland",
+    "aliases": [
+      "childs play",
+      "чаки"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Кукловод",
+    "franchise_part": 1
+  },
+  {
+    "id": 44,
+    "kind": "film",
+    "title": "Незнакомцы: Начало",
+    "year": 2023,
+    "minutes": 91,
+    "director": "Renny Harlin",
+    "aliases": [
+      "the strangers"
+    ],
+    "tags": [
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Незнакомцы",
+    "franchise_part": 1
+  },
+  {
+    "id": 45,
+    "kind": "film",
+    "title": "Дом большой мамочки",
+    "year": 2000,
+    "minutes": 99,
+    "director": "Keenen Ivory Wayans",
+    "aliases": [
+      "big mommas house"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Дом большой мамочки",
+    "franchise_part": 1
+  },
+  {
+    "id": 46,
+    "kind": "film",
+    "title": "Мы — Миллеры",
+    "year": 2013,
+    "minutes": 110,
+    "director": "Rawson Marshall Thurber",
+    "aliases": [
+      "were the millers"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 47,
+    "kind": "series",
+    "title": "Очень странные дела",
+    "year": 2016,
+    "minutes": 60,
+    "director": "Братья Даффер",
+    "aliases": [
+      "stranger things"
+    ],
+    "tags": [
+      "scifi_fantasy",
+      "thriller_horror",
+      "detective"
+    ],
+    "poster_url": "",
+    "franchise": "Очень странные дела",
+    "franchise_part": 1
+  },
+  {
+    "id": 48,
+    "kind": "film",
+    "title": "Третий лишний",
+    "year": 2012,
+    "minutes": 106,
+    "director": "Seth MacFarlane",
+    "aliases": [
+      "ted"
+    ],
+    "tags": [
+      "drama_melodrama",
+      "scifi_fantasy"
+    ],
+    "poster_url": "",
+    "franchise": "Третий лишний",
+    "franchise_part": 1
+  },
+  {
+    "id": 49,
+    "kind": "film",
+    "title": "Шалун",
+    "year": 1990,
+    "minutes": 81,
+    "director": "Dennis Dugan",
+    "aliases": [
+      "problem child"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Шалун",
+    "franchise_part": 1
+  },
+  {
+    "id": 50,
+    "kind": "film",
+    "title": "Ночь в музее",
+    "year": 2006,
+    "minutes": 108,
+    "director": "Shawn Levy",
+    "aliases": [
+      "night at the museum"
+    ],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Ночь в музее",
+    "franchise_part": 1
+  },
+  {
+    "id": 51,
+    "kind": "film",
+    "title": "Уловки Норбита",
+    "year": 2007,
+    "minutes": 102,
+    "director": "Brian Robbins",
+    "aliases": [
+      "norbit"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 52,
+    "kind": "film",
+    "title": "Няньки",
+    "year": 2011,
+    "minutes": 80,
+    "director": "David Gordon Green",
+    "aliases": [
+      "the sitter"
+    ],
+    "tags": [
+      "drama_melodrama",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 53,
+    "kind": "film",
+    "title": "Элвин и бурундуки",
+    "year": 2007,
+    "minutes": 92,
+    "director": "Tim Hill",
+    "aliases": [
+      "alvin and the chipmunks"
+    ],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Элвин и бурундуки",
+    "franchise_part": 1
+  },
+  {
+    "id": 54,
+    "kind": "series",
+    "title": "Юный Шелдон",
+    "year": 2017,
+    "minutes": 22,
+    "director": "Chuck Lorre",
+    "aliases": [
+      "young sheldon"
+    ],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Юный Шелдон",
+    "franchise_part": 1
+  },
+  {
+    "id": 55,
+    "kind": "film",
+    "title": "Круэлла",
+    "year": 2021,
+    "minutes": 134,
+    "director": "Craig Gillespie",
+    "aliases": [
+      "cruella"
+    ],
+    "tags": [
+      "drama_melodrama",
+      "historical"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 56,
+    "kind": "film",
+    "title": "Начало",
+    "year": 2010,
+    "minutes": 148,
+    "director": "Christopher Nolan",
+    "aliases": [
+      "inception"
+    ],
+    "tags": [
+      "scifi_fantasy",
+      "detective",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 57,
+    "kind": "film",
+    "title": "Интерстellar",
+    "year": 2014,
+    "minutes": 169,
+    "director": "Christopher Nolan",
+    "aliases": [
+      "interstellar"
+    ],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 58,
+    "kind": "film",
+    "title": "Матрица",
+    "year": 1999,
+    "minutes": 136,
+    "director": "Wachowski",
+    "aliases": [
+      "matrix"
+    ],
+    "tags": [
+      "scifi_fantasy",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Матрица",
+    "franchise_part": 1
+  },
+  {
+    "id": 59,
+    "kind": "film",
+    "title": "Матрица: Перезагрузка",
+    "year": 2003,
+    "minutes": 138,
+    "director": "Wachowski",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Матрица",
+    "franchise_part": 2
+  },
+  {
+    "id": 60,
+    "kind": "film",
+    "title": "Матрица: Ревolutions",
+    "year": 2003,
+    "minutes": 129,
+    "director": "Wachowski",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Матрица",
+    "franchise_part": 3
+  },
+  {
+    "id": 61,
+    "kind": "film",
+    "title": "Назад в будущее",
+    "year": 1985,
+    "minutes": 116,
+    "director": "Robert Zemeckis",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Назад в будущее",
+    "franchise_part": 1
+  },
+  {
+    "id": 62,
+    "kind": "film",
+    "title": "Назад в будущее 2",
+    "year": 1989,
+    "minutes": 108,
+    "director": "Robert Zemeckis",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Назад в будущее",
+    "franchise_part": 2
+  },
+  {
+    "id": 63,
+    "kind": "film",
+    "title": "Назад в будущее 3",
+    "year": 1990,
+    "minutes": 118,
+    "director": "Robert Zemeckis",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "historical"
+    ],
+    "poster_url": "",
+    "franchise": "Назад в будущее",
+    "franchise_part": 3
+  },
+  {
+    "id": 64,
+    "kind": "film",
+    "title": "Аватар",
+    "year": 2009,
+    "minutes": 162,
+    "director": "James Cameron",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Аватар",
+    "franchise_part": 1
+  },
+  {
+    "id": 65,
+    "kind": "film",
+    "title": "Аватар: Путь воды",
+    "year": 2022,
+    "minutes": 192,
+    "director": "James Cameron",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Аватар",
+    "franchise_part": 2
+  },
+  {
+    "id": 66,
+    "kind": "film",
+    "title": "Джокер",
+    "year": 2019,
+    "minutes": 122,
+    "director": "Todd Phillips",
+    "aliases": [],
+    "tags": [
+      "drama_melodrama",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 67,
+    "kind": "film",
+    "title": "Паразиты",
+    "year": 2019,
+    "minutes": 132,
+    "director": "Bong Joon-ho",
+    "aliases": [],
+    "tags": [
+      "thriller_horror",
+      "drama_melodrama",
+      "detective"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 68,
+    "kind": "film",
+    "title": "Прочь",
+    "year": 2017,
+    "minutes": 104,
+    "director": "Jordan Peele",
+    "aliases": [
+      "get out"
+    ],
+    "tags": [
+      "thriller_horror",
+      "detective"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 69,
+    "kind": "film",
+    "title": "Сплит",
+    "year": 2016,
+    "minutes": 117,
+    "director": "M. Night Shyamalan",
+    "aliases": [
+      "split"
+    ],
+    "tags": [
+      "thriller_horror",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 70,
+    "kind": "film",
+    "title": "Достать ножи",
+    "year": 2019,
+    "minutes": 130,
+    "director": "Rian Johnson",
+    "aliases": [],
+    "tags": [
+      "detective",
+      "drama_melodrama",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 71,
+    "kind": "film",
+    "title": "Достать ножи: Стеклянная луковица",
+    "year": 2022,
+    "minutes": 140,
+    "director": "Rian Johnson",
+    "aliases": [],
+    "tags": [
+      "detective",
+      "drama_melodrama",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 72,
+    "kind": "series",
+    "title": "Шерlock",
+    "year": 2010,
+    "minutes": 90,
+    "director": "BBC",
+    "aliases": [],
+    "tags": [
+      "detective",
+      "drama_melodrama",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Sherlock",
+    "franchise_part": 1
+  },
+  {
+    "id": 73,
+    "kind": "series",
+    "title": "Игра престолов",
+    "year": 2011,
+    "minutes": 60,
+    "director": "David Benioff",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Игра престолов",
+    "franchise_part": 1
+  },
+  {
+    "id": 74,
+    "kind": "series",
+    "title": "Ведьмак",
+    "year": 2019,
+    "minutes": 60,
+    "director": "Lauren Schmidt Hissrich",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Ведьмак",
+    "franchise_part": 1
+  },
+  {
+    "id": 75,
+    "kind": "series",
+    "title": "Мандalorian",
+    "year": 2019,
+    "minutes": 40,
+    "director": "Jon Favreau",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Star Wars",
+    "franchise_part": 1
+  },
+  {
+    "id": 76,
+    "kind": "series",
+    "title": "Мandolorian",
+    "year": 2019,
+    "minutes": 40,
+    "director": "Jon Favreau",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Star Wars",
+    "franchise_part": 1
+  },
+  {
+    "id": 77,
+    "kind": "film",
+    "title": "Бегущий по лезвию 2049",
+    "year": 2017,
+    "minutes": 164,
+    "director": "Denis Villeneuve",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "detective",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 78,
+    "kind": "film",
+    "title": "Blade Runner",
+    "year": 1982,
+    "minutes": 117,
+    "director": "Ridley Scott",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "detective",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 79,
+    "kind": "film",
+    "title": "Побег из Shawshank",
+    "year": 1994,
+    "minutes": 142,
+    "director": "Frank Darabont",
+    "aliases": [],
+    "tags": [
+      "drama_melodrama",
+      "historical"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 80,
+    "kind": "film",
+    "title": "Побег из Шоушенка",
+    "year": 1994,
+    "minutes": 142,
+    "director": "Frank Darabont",
+    "aliases": [],
+    "tags": [
+      "drama_melodrama",
+      "historical"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 81,
+    "kind": "film",
+    "title": "1+1",
+    "year": 2011,
+    "minutes": 112,
+    "director": "Olivier Nakache",
+    "aliases": [],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 82,
+    "kind": "film",
+    "title": "Intouchables",
+    "year": 2011,
+    "minutes": 112,
+    "director": "Olivier Nakache",
+    "aliases": [],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 83,
+    "kind": "film",
+    "title": "Green Book",
+    "year": 2018,
+    "minutes": 130,
+    "director": "Peter Farrelly",
+    "aliases": [],
+    "tags": [
+      "drama_melodrama",
+      "historical"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 84,
+    "kind": "film",
+    "title": "Зелёная книга",
+    "year": 2018,
+    "minutes": 130,
+    "director": "Peter Farrelly",
+    "aliases": [],
+    "tags": [
+      "drama_melodrama",
+      "historical"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 85,
+    "kind": "film",
+    "title": "Whiplash",
+    "year": 2014,
+    "minutes": 106,
+    "director": "Damien Chazelle",
+    "aliases": [],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 86,
+    "kind": "film",
+    "title": "Одержимость",
+    "year": 2014,
+    "minutes": 106,
+    "director": "Damien Chazelle",
+    "aliases": [],
+    "tags": [
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 87,
+    "kind": "film",
+    "title": "Джуманджи",
+    "year": 2017,
+    "minutes": 119,
+    "director": "Jake Kasdan",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Джуманджи",
+    "franchise_part": 1
+  },
+  {
+    "id": 88,
+    "kind": "film",
+    "title": "King Kong",
+    "year": 2005,
+    "minutes": 187,
+    "director": "Peter Jackson",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 89,
+    "kind": "film",
+    "title": "Кинг Kong",
+    "year": 2005,
+    "minutes": 187,
+    "director": "Peter Jackson",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 90,
+    "kind": "film",
+    "title": "Пirates Caribbean",
+    "year": 2003,
+    "minutes": 143,
+    "director": "Gore Verbinski",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Пirates",
+    "franchise_part": 1
+  },
+  {
+    "id": 91,
+    "kind": "film",
+    "title": "Пirates of Caribbean",
+    "year": 2003,
+    "minutes": 143,
+    "director": "Gore Verbinski",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Пirates",
+    "franchise_part": 1
+  },
+  {
+    "id": 92,
+    "kind": "film",
+    "title": "Пираты Карibbean",
+    "year": 2003,
+    "minutes": 143,
+    "director": "Gore Verbinski",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Пираты",
+    "franchise_part": 1
+  },
+  {
+    "id": 93,
+    "kind": "film",
+    "title": "Пираты Карibbean: Сундук",
+    "year": 2006,
+    "minutes": 151,
+    "director": "Gore Verbinski",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Пираты",
+    "franchise_part": 2
+  },
+  {
+    "id": 94,
+    "kind": "film",
+    "title": "Терминator",
+    "year": 1984,
+    "minutes": 107,
+    "director": "James Cameron",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Терминатор",
+    "franchise_part": 1
+  },
+  {
+    "id": 95,
+    "kind": "film",
+    "title": "Терминатор 2",
+    "year": 1991,
+    "minutes": 137,
+    "director": "James Cameron",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Терминатор",
+    "franchise_part": 2
+  },
+  {
+    "id": 96,
+    "kind": "film",
+    "title": "RoboCop",
+    "year": 1987,
+    "minutes": 102,
+    "director": "Paul Verhoeven",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 97,
+    "kind": "film",
+    "title": "Робокop",
+    "year": 1987,
+    "minutes": 102,
+    "director": "Paul Verhoeven",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": null,
+    "franchise_part": null
+  },
+  {
+    "id": 98,
+    "kind": "film",
+    "title": "Mad Max Fury Road",
+    "year": 2015,
+    "minutes": 120,
+    "director": "George Miller",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Mad Max",
+    "franchise_part": 4
+  },
+  {
+    "id": 99,
+    "kind": "film",
+    "title": "Безумный Max",
+    "year": 2015,
+    "minutes": 120,
+    "director": "George Miller",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "thriller_horror"
+    ],
+    "poster_url": "",
+    "franchise": "Mad Max",
+    "franchise_part": 4
+  },
+  {
+    "id": 100,
+    "kind": "film",
+    "title": "Dune",
+    "year": 2021,
+    "minutes": 155,
+    "director": "Denis Villeneuve",
+    "aliases": [],
+    "tags": [
+      "scifi_fantasy",
+      "drama_melodrama"
+    ],
+    "poster_url": "",
+    "franchise": "Dune",
+    "franchise_part": 1
+  }
+]
