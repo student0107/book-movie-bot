@@ -5,6 +5,7 @@ from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMar
 from catalog import load_books, load_movies
 from config import MEDIA_BOOK, MEDIA_MOVIE
 from database import load_books_profile, load_movies_profile
+from llm_client import llm_enabled, personalize_why_lines
 from media_cards import send_book_card, send_movie_card
 from personal_recommend import recommend_personal
 from recommendation_movies import is_same_director_movie, MoviesProfile
@@ -26,31 +27,53 @@ async def _send_personal(message: Message, media_type: str) -> None:
     label = "книг" if media_type == MEDIA_BOOK else "фильмов"
     await message.answer(f"Персональные рекомендации ({label}) — с объяснением, почему советую:")
 
+    profile_row = (
+        await load_books_profile(message.from_user.id)
+        if media_type == MEDIA_BOOK
+        else await load_movies_profile(message.from_user.id)
+    )
+    taste_summary = str((profile_row or {}).get("taste_summary") or "")
+    expectations_raw = str((profile_row or {}).get("expectations_raw") or "")
+
+    why_overrides: dict[int, str] = {}
+    if llm_enabled() and profile_row and (taste_summary or expectations_raw):
+        pairs = [(pick.item, pick.why) for pick in picks]
+        why_overrides = await personalize_why_lines(
+            media_label="книги" if media_type == MEDIA_BOOK else "фильмы",
+            taste_summary=taste_summary,
+            expectations_raw=expectations_raw,
+            items=pairs,
+        )
+
     if media_type == MEDIA_BOOK:
-        profile_row = await load_books_profile(message.from_user.id)
         profile = BooksProfile(
             tags_include=set(profile_row.get("tags_include") or []) if profile_row else set(),
             tags_exclude=set(profile_row.get("tags_exclude") or []) if profile_row else set(),
             volume_preference=str(profile_row.get("volume_preference") or "any") if profile_row else "any",
             favorite_book_id=profile_row.get("favorite_book_id") if profile_row else None,
+            favorite_book_raw=str(profile_row.get("favorite_book_raw") or "") if profile_row else "",
             favorite_author=profile_row.get("favorite_author") if profile_row else None,
         )
         for pick in picks:
+            item_id = int(pick.item["id"])
+            why = why_overrides.get(item_id, pick.why)
             same = is_same_author_book(pick.item, profile)
-            await send_book_card(message, pick.item, same_author=same, why=pick.why)
+            await send_book_card(message, pick.item, same_author=same, why=why)
     else:
-        profile_row = await load_movies_profile(message.from_user.id)
         profile = MoviesProfile(
             tags_include=set(profile_row.get("tags_include") or []) if profile_row else set(),
             tags_exclude=set(profile_row.get("tags_exclude") or []) if profile_row else set(),
             duration_preference=str(profile_row.get("duration_preference") or "any") if profile_row else "any",
             favorite_movie_id=profile_row.get("favorite_movie_id") if profile_row else None,
+            favorite_movie_raw=str(profile_row.get("favorite_movie_raw") or "") if profile_row else "",
             favorite_director=profile_row.get("favorite_director") if profile_row else None,
         )
         catalog_list = catalog
         for pick in picks:
+            item_id = int(pick.item["id"])
+            why = why_overrides.get(item_id, pick.why)
             same = is_same_director_movie(pick.item, profile, catalog_list)
-            await send_movie_card(message, pick.item, same_director=same, why=pick.why)
+            await send_movie_card(message, pick.item, same_director=same, why=why)
 
 
 @router.message(Command("recommend"))

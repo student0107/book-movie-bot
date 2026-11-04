@@ -101,7 +101,6 @@ def item_by_id(catalog: list[dict[str, Any]], item_id: int | None) -> dict[str, 
     return None
 
 
-load_catalog = load_books
 
 
 def book_by_id(catalog: list[dict[str, Any]], book_id: int | None) -> dict[str, Any] | None:

@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 *.db
 moviesb00ks_bot
+.bot.lock

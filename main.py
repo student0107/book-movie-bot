@@ -1,6 +1,7 @@
 import asyncio
 import logging
 import os
+from pathlib import Path
 
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
@@ -16,8 +17,11 @@ from handlers import (
     start_router,
 )
 from scheduler import process_due_reminders
+from single_instance import ensure_single_instance
 
 load_dotenv()
+if not os.getenv("BOT_TOKEN"):
+    load_dotenv(Path(__file__).resolve().parent / "moviesb00ks_bot")
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -55,4 +59,5 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
+    ensure_single_instance()
     asyncio.run(main())

@@ -78,6 +78,22 @@ async def init_db() -> None:
             """
         )
         await db.commit()
+        await _migrate_profile_columns(db)
+
+
+async def _migrate_profile_columns(db: aiosqlite.Connection) -> None:
+    for table in ("books_profile", "movies_profile"):
+        cursor = await db.execute(f"PRAGMA table_info({table})")
+        columns = {row[1] for row in await cursor.fetchall()}
+        if "expectations_raw" not in columns:
+            await db.execute(
+                f"ALTER TABLE {table} ADD COLUMN expectations_raw TEXT NOT NULL DEFAULT ''"
+            )
+        if "taste_summary" not in columns:
+            await db.execute(
+                f"ALTER TABLE {table} ADD COLUMN taste_summary TEXT NOT NULL DEFAULT ''"
+            )
+    await db.commit()
 
 
 def _loads_tags(raw: str) -> set[str]:
@@ -93,6 +109,8 @@ async def save_books_profile(
     favorite_book_raw: str,
     favorite_book_id: int | None,
     favorite_author: str | None,
+    expectations_raw: str,
+    taste_summary: str,
     completed_at: str,
 ) -> None:
     async with aiosqlite.connect(DB_PATH) as db:
@@ -100,8 +118,9 @@ async def save_books_profile(
             """
             INSERT INTO books_profile (
                 user_id, tags_include, tags_exclude, volume_preference,
-                favorite_book_raw, favorite_book_id, favorite_author, stage1_completed_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                favorite_book_raw, favorite_book_id, favorite_author,
+                expectations_raw, taste_summary, stage1_completed_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(user_id) DO UPDATE SET
                 tags_include = excluded.tags_include,
                 tags_exclude = excluded.tags_exclude,
@@ -109,6 +128,8 @@ async def save_books_profile(
                 favorite_book_raw = excluded.favorite_book_raw,
                 favorite_book_id = excluded.favorite_book_id,
                 favorite_author = excluded.favorite_author,
+                expectations_raw = excluded.expectations_raw,
+                taste_summary = excluded.taste_summary,
                 stage1_completed_at = excluded.stage1_completed_at
             """,
             (
@@ -119,6 +140,8 @@ async def save_books_profile(
                 favorite_book_raw,
                 favorite_book_id,
                 favorite_author,
+                expectations_raw,
+                taste_summary,
                 completed_at,
             ),
         )
@@ -138,6 +161,8 @@ async def save_movies_profile(
     favorite_movie_raw: str,
     favorite_movie_id: int | None,
     favorite_director: str | None,
+    expectations_raw: str,
+    taste_summary: str,
     completed_at: str,
 ) -> None:
     async with aiosqlite.connect(DB_PATH) as db:
@@ -145,8 +170,9 @@ async def save_movies_profile(
             """
             INSERT INTO movies_profile (
                 user_id, tags_include, tags_exclude, duration_preference,
-                favorite_movie_raw, favorite_movie_id, favorite_director, stage1_completed_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                favorite_movie_raw, favorite_movie_id, favorite_director,
+                expectations_raw, taste_summary, stage1_completed_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(user_id) DO UPDATE SET
                 tags_include = excluded.tags_include,
                 tags_exclude = excluded.tags_exclude,
@@ -154,6 +180,8 @@ async def save_movies_profile(
                 favorite_movie_raw = excluded.favorite_movie_raw,
                 favorite_movie_id = excluded.favorite_movie_id,
                 favorite_director = excluded.favorite_director,
+                expectations_raw = excluded.expectations_raw,
+                taste_summary = excluded.taste_summary,
                 stage1_completed_at = excluded.stage1_completed_at
             """,
             (
@@ -164,6 +192,8 @@ async def save_movies_profile(
                 favorite_movie_raw,
                 favorite_movie_id,
                 favorite_director,
+                expectations_raw,
+                taste_summary,
                 completed_at,
             ),
         )
