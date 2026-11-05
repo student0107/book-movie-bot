@@ -4,7 +4,7 @@ from aiogram import Bot
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from catalog import item_by_id, load_books, load_movies
-from config import MEDIA_BOOK, MEDIA_MOVIE
+from config import MEDIA_BOOK, MEDIA_MOVIE, RATING_REMINDER_DAYS_BOOK, RATING_REMINDER_DAYS_MOVIE
 from database import fetch_due_reminders, mark_reminder_sent
 
 logger = logging.getLogger(__name__)
@@ -52,8 +52,16 @@ async def process_due_reminders(bot: Bot) -> None:
 
         title = str(item.get("title") or "")
         kind_note = " (сериал)" if item.get("kind") == "series" else ""
+        if media_type == MEDIA_MOVIE:
+            when = (
+                "Примерно сутки прошли"
+                if RATING_REMINDER_DAYS_MOVIE == 1
+                else f"Прошло около {RATING_REMINDER_DAYS_MOVIE} дн."
+            )
+        else:
+            when = f"Прошло около {RATING_REMINDER_DAYS_BOOK} дн."
         text = (
-            f"Прошло около 10 дней — как тебе «{title}»{kind_note}? "
+            f"{when} — как тебе «{title}»{kind_note}? "
             "Обнови статус, а если досмотрел(а) — потом попросим оценку."
         )
         try:

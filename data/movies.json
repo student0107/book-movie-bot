@@ -47,6 +47,7 @@
       "10 things i hate about you"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama"
     ],
     "poster_url": "",
@@ -99,6 +100,7 @@
       "the proposal"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama"
     ],
     "poster_url": "",
@@ -135,6 +137,7 @@
       "how to lose a guy in 10 days"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama"
     ],
     "poster_url": "",
@@ -170,6 +173,7 @@
       "the parent trap"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama"
     ],
     "poster_url": "",
@@ -225,6 +229,7 @@
       "notting hill"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama"
     ],
     "poster_url": "",
@@ -260,6 +265,7 @@
       "pretty woman"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama"
     ],
     "poster_url": "",
@@ -277,6 +283,7 @@
       "breakfast at tiffany"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama",
       "historical"
     ],
@@ -295,6 +302,7 @@
       "just go with it"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama"
     ],
     "poster_url": "",
@@ -486,6 +494,7 @@
       "matilda"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama",
       "scifi_fantasy"
     ],
@@ -786,6 +795,7 @@
       "big mommas house"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama"
     ],
     "poster_url": "",
@@ -803,6 +813,7 @@
       "were the millers"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama"
     ],
     "poster_url": "",
@@ -811,25 +822,6 @@
   },
   {
     "id": 47,
-    "kind": "series",
-    "title": "Очень странные дела",
-    "year": 2016,
-    "minutes": 60,
-    "director": "Братья Даффер",
-    "aliases": [
-      "stranger things"
-    ],
-    "tags": [
-      "scifi_fantasy",
-      "thriller_horror",
-      "detective"
-    ],
-    "poster_url": "",
-    "franchise": "Очень странные дела",
-    "franchise_part": 1
-  },
-  {
-    "id": 48,
     "kind": "film",
     "title": "Третий лишний",
     "year": 2012,
@@ -839,6 +831,7 @@
       "ted"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama",
       "scifi_fantasy"
     ],
@@ -847,7 +840,7 @@
     "franchise_part": 1
   },
   {
-    "id": 49,
+    "id": 48,
     "kind": "film",
     "title": "Шалун",
     "year": 1990,
@@ -857,6 +850,7 @@
       "problem child"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama"
     ],
     "poster_url": "",
@@ -864,7 +858,7 @@
     "franchise_part": 1
   },
   {
-    "id": 50,
+    "id": 49,
     "kind": "film",
     "title": "Ночь в музее",
     "year": 2006,
@@ -874,6 +868,7 @@
       "night at the museum"
     ],
     "tags": [
+      "comedy",
       "scifi_fantasy",
       "drama_melodrama"
     ],
@@ -882,7 +877,7 @@
     "franchise_part": 1
   },
   {
-    "id": 51,
+    "id": 50,
     "kind": "film",
     "title": "Уловки Норбита",
     "year": 2007,
@@ -892,6 +887,7 @@
       "norbit"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama"
     ],
     "poster_url": "",
@@ -899,7 +895,7 @@
     "franchise_part": null
   },
   {
-    "id": 52,
+    "id": 51,
     "kind": "film",
     "title": "Няньки",
     "year": 2011,
@@ -909,6 +905,7 @@
       "the sitter"
     ],
     "tags": [
+      "comedy",
       "drama_melodrama",
       "thriller_horror"
     ],
@@ -917,7 +914,7 @@
     "franchise_part": null
   },
   {
-    "id": 53,
+    "id": 52,
     "kind": "film",
     "title": "Элвин и бурундуки",
     "year": 2007,
@@ -927,6 +924,7 @@
       "alvin and the chipmunks"
     ],
     "tags": [
+      "comedy",
       "scifi_fantasy",
       "drama_melodrama"
     ],
@@ -935,24 +933,7 @@
     "franchise_part": 1
   },
   {
-    "id": 54,
-    "kind": "series",
-    "title": "Юный Шелдон",
-    "year": 2017,
-    "minutes": 22,
-    "director": "Chuck Lorre",
-    "aliases": [
-      "young sheldon"
-    ],
-    "tags": [
-      "drama_melodrama"
-    ],
-    "poster_url": "",
-    "franchise": "Юный Шелдон",
-    "franchise_part": 1
-  },
-  {
-    "id": 55,
+    "id": 53,
     "kind": "film",
     "title": "Круэлла",
     "year": 2021,
@@ -970,7 +951,7 @@
     "franchise_part": null
   },
   {
-    "id": 56,
+    "id": 54,
     "kind": "film",
     "title": "Начало",
     "year": 2010,
@@ -989,7 +970,7 @@
     "franchise_part": null
   },
   {
-    "id": 57,
+    "id": 55,
     "kind": "film",
     "title": "Интерстellar",
     "year": 2014,
@@ -1007,7 +988,7 @@
     "franchise_part": null
   },
   {
-    "id": 58,
+    "id": 56,
     "kind": "film",
     "title": "Матрица",
     "year": 1999,
@@ -1025,7 +1006,7 @@
     "franchise_part": 1
   },
   {
-    "id": 59,
+    "id": 57,
     "kind": "film",
     "title": "Матрица: Перезагрузка",
     "year": 2003,
@@ -1041,7 +1022,7 @@
     "franchise_part": 2
   },
   {
-    "id": 60,
+    "id": 58,
     "kind": "film",
     "title": "Матрица: Ревolutions",
     "year": 2003,
@@ -1057,7 +1038,7 @@
     "franchise_part": 3
   },
   {
-    "id": 61,
+    "id": 59,
     "kind": "film",
     "title": "Назад в будущее",
     "year": 1985,
@@ -1073,7 +1054,7 @@
     "franchise_part": 1
   },
   {
-    "id": 62,
+    "id": 60,
     "kind": "film",
     "title": "Назад в будущее 2",
     "year": 1989,
@@ -1089,7 +1070,7 @@
     "franchise_part": 2
   },
   {
-    "id": 63,
+    "id": 61,
     "kind": "film",
     "title": "Назад в будущее 3",
     "year": 1990,
@@ -1105,7 +1086,7 @@
     "franchise_part": 3
   },
   {
-    "id": 64,
+    "id": 62,
     "kind": "film",
     "title": "Аватар",
     "year": 2009,
@@ -1121,7 +1102,7 @@
     "franchise_part": 1
   },
   {
-    "id": 65,
+    "id": 63,
     "kind": "film",
     "title": "Аватар: Путь воды",
     "year": 2022,
@@ -1137,7 +1118,7 @@
     "franchise_part": 2
   },
   {
-    "id": 66,
+    "id": 64,
     "kind": "film",
     "title": "Джокер",
     "year": 2019,
@@ -1153,7 +1134,7 @@
     "franchise_part": null
   },
   {
-    "id": 67,
+    "id": 65,
     "kind": "film",
     "title": "Паразиты",
     "year": 2019,
@@ -1170,7 +1151,7 @@
     "franchise_part": null
   },
   {
-    "id": 68,
+    "id": 66,
     "kind": "film",
     "title": "Прочь",
     "year": 2017,
@@ -1188,7 +1169,7 @@
     "franchise_part": null
   },
   {
-    "id": 69,
+    "id": 67,
     "kind": "film",
     "title": "Сплит",
     "year": 2016,
@@ -1206,7 +1187,7 @@
     "franchise_part": null
   },
   {
-    "id": 70,
+    "id": 68,
     "kind": "film",
     "title": "Достать ножи",
     "year": 2019,
@@ -1223,7 +1204,7 @@
     "franchise_part": null
   },
   {
-    "id": 71,
+    "id": 69,
     "kind": "film",
     "title": "Достать ножи: Стеклянная луковица",
     "year": 2022,
@@ -1240,90 +1221,7 @@
     "franchise_part": null
   },
   {
-    "id": 72,
-    "kind": "series",
-    "title": "Шерlock",
-    "year": 2010,
-    "minutes": 90,
-    "director": "BBC",
-    "aliases": [],
-    "tags": [
-      "detective",
-      "drama_melodrama",
-      "thriller_horror"
-    ],
-    "poster_url": "",
-    "franchise": "Sherlock",
-    "franchise_part": 1
-  },
-  {
-    "id": 73,
-    "kind": "series",
-    "title": "Игра престолов",
-    "year": 2011,
-    "minutes": 60,
-    "director": "David Benioff",
-    "aliases": [],
-    "tags": [
-      "scifi_fantasy",
-      "drama_melodrama",
-      "thriller_horror"
-    ],
-    "poster_url": "",
-    "franchise": "Игра престолов",
-    "franchise_part": 1
-  },
-  {
-    "id": 74,
-    "kind": "series",
-    "title": "Ведьмак",
-    "year": 2019,
-    "minutes": 60,
-    "director": "Lauren Schmidt Hissrich",
-    "aliases": [],
-    "tags": [
-      "scifi_fantasy",
-      "drama_melodrama",
-      "thriller_horror"
-    ],
-    "poster_url": "",
-    "franchise": "Ведьмак",
-    "franchise_part": 1
-  },
-  {
-    "id": 75,
-    "kind": "series",
-    "title": "Мандalorian",
-    "year": 2019,
-    "minutes": 40,
-    "director": "Jon Favreau",
-    "aliases": [],
-    "tags": [
-      "scifi_fantasy",
-      "drama_melodrama"
-    ],
-    "poster_url": "",
-    "franchise": "Star Wars",
-    "franchise_part": 1
-  },
-  {
-    "id": 76,
-    "kind": "series",
-    "title": "Мandolorian",
-    "year": 2019,
-    "minutes": 40,
-    "director": "Jon Favreau",
-    "aliases": [],
-    "tags": [
-      "scifi_fantasy",
-      "drama_melodrama"
-    ],
-    "poster_url": "",
-    "franchise": "Star Wars",
-    "franchise_part": 1
-  },
-  {
-    "id": 77,
+    "id": 70,
     "kind": "film",
     "title": "Бегущий по лезвию 2049",
     "year": 2017,
@@ -1340,7 +1238,7 @@
     "franchise_part": null
   },
   {
-    "id": 78,
+    "id": 71,
     "kind": "film",
     "title": "Blade Runner",
     "year": 1982,
@@ -1357,7 +1255,7 @@
     "franchise_part": null
   },
   {
-    "id": 79,
+    "id": 72,
     "kind": "film",
     "title": "Побег из Shawshank",
     "year": 1994,
@@ -1373,23 +1271,7 @@
     "franchise_part": null
   },
   {
-    "id": 80,
-    "kind": "film",
-    "title": "Побег из Шоушенка",
-    "year": 1994,
-    "minutes": 142,
-    "director": "Frank Darabont",
-    "aliases": [],
-    "tags": [
-      "drama_melodrama",
-      "historical"
-    ],
-    "poster_url": "",
-    "franchise": null,
-    "franchise_part": null
-  },
-  {
-    "id": 81,
+    "id": 73,
     "kind": "film",
     "title": "1+1",
     "year": 2011,
@@ -1397,6 +1279,7 @@
     "director": "Olivier Nakache",
     "aliases": [],
     "tags": [
+      "comedy",
       "drama_melodrama"
     ],
     "poster_url": "",
@@ -1404,22 +1287,7 @@
     "franchise_part": null
   },
   {
-    "id": 82,
-    "kind": "film",
-    "title": "Intouchables",
-    "year": 2011,
-    "minutes": 112,
-    "director": "Olivier Nakache",
-    "aliases": [],
-    "tags": [
-      "drama_melodrama"
-    ],
-    "poster_url": "",
-    "franchise": null,
-    "franchise_part": null
-  },
-  {
-    "id": 83,
+    "id": 74,
     "kind": "film",
     "title": "Green Book",
     "year": 2018,
@@ -1435,23 +1303,7 @@
     "franchise_part": null
   },
   {
-    "id": 84,
-    "kind": "film",
-    "title": "Зелёная книга",
-    "year": 2018,
-    "minutes": 130,
-    "director": "Peter Farrelly",
-    "aliases": [],
-    "tags": [
-      "drama_melodrama",
-      "historical"
-    ],
-    "poster_url": "",
-    "franchise": null,
-    "franchise_part": null
-  },
-  {
-    "id": 85,
+    "id": 75,
     "kind": "film",
     "title": "Whiplash",
     "year": 2014,
@@ -1466,7 +1318,7 @@
     "franchise_part": null
   },
   {
-    "id": 86,
+    "id": 76,
     "kind": "film",
     "title": "Одержимость",
     "year": 2014,
@@ -1481,7 +1333,7 @@
     "franchise_part": null
   },
   {
-    "id": 87,
+    "id": 77,
     "kind": "film",
     "title": "Джуманджи",
     "year": 2017,
@@ -1489,6 +1341,7 @@
     "director": "Jake Kasdan",
     "aliases": [],
     "tags": [
+      "comedy",
       "scifi_fantasy",
       "drama_melodrama"
     ],
@@ -1497,7 +1350,7 @@
     "franchise_part": 1
   },
   {
-    "id": 88,
+    "id": 78,
     "kind": "film",
     "title": "King Kong",
     "year": 2005,
@@ -1513,23 +1366,7 @@
     "franchise_part": null
   },
   {
-    "id": 89,
-    "kind": "film",
-    "title": "Кинг Kong",
-    "year": 2005,
-    "minutes": 187,
-    "director": "Peter Jackson",
-    "aliases": [],
-    "tags": [
-      "scifi_fantasy",
-      "thriller_horror"
-    ],
-    "poster_url": "",
-    "franchise": null,
-    "franchise_part": null
-  },
-  {
-    "id": 90,
+    "id": 79,
     "kind": "film",
     "title": "Пirates Caribbean",
     "year": 2003,
@@ -1545,39 +1382,7 @@
     "franchise_part": 1
   },
   {
-    "id": 91,
-    "kind": "film",
-    "title": "Пirates of Caribbean",
-    "year": 2003,
-    "minutes": 143,
-    "director": "Gore Verbinski",
-    "aliases": [],
-    "tags": [
-      "scifi_fantasy",
-      "drama_melodrama"
-    ],
-    "poster_url": "",
-    "franchise": "Пirates",
-    "franchise_part": 1
-  },
-  {
-    "id": 92,
-    "kind": "film",
-    "title": "Пираты Карibbean",
-    "year": 2003,
-    "minutes": 143,
-    "director": "Gore Verbinski",
-    "aliases": [],
-    "tags": [
-      "scifi_fantasy",
-      "drama_melodrama"
-    ],
-    "poster_url": "",
-    "franchise": "Пираты",
-    "franchise_part": 1
-  },
-  {
-    "id": 93,
+    "id": 80,
     "kind": "film",
     "title": "Пираты Карibbean: Сундук",
     "year": 2006,
@@ -1593,7 +1398,7 @@
     "franchise_part": 2
   },
   {
-    "id": 94,
+    "id": 81,
     "kind": "film",
     "title": "Терминator",
     "year": 1984,
@@ -1609,7 +1414,7 @@
     "franchise_part": 1
   },
   {
-    "id": 95,
+    "id": 82,
     "kind": "film",
     "title": "Терминатор 2",
     "year": 1991,
@@ -1625,7 +1430,7 @@
     "franchise_part": 2
   },
   {
-    "id": 96,
+    "id": 83,
     "kind": "film",
     "title": "RoboCop",
     "year": 1987,
@@ -1641,23 +1446,7 @@
     "franchise_part": null
   },
   {
-    "id": 97,
-    "kind": "film",
-    "title": "Робокop",
-    "year": 1987,
-    "minutes": 102,
-    "director": "Paul Verhoeven",
-    "aliases": [],
-    "tags": [
-      "scifi_fantasy",
-      "thriller_horror"
-    ],
-    "poster_url": "",
-    "franchise": null,
-    "franchise_part": null
-  },
-  {
-    "id": 98,
+    "id": 84,
     "kind": "film",
     "title": "Mad Max Fury Road",
     "year": 2015,
@@ -1673,23 +1462,7 @@
     "franchise_part": 4
   },
   {
-    "id": 99,
-    "kind": "film",
-    "title": "Безумный Max",
-    "year": 2015,
-    "minutes": 120,
-    "director": "George Miller",
-    "aliases": [],
-    "tags": [
-      "scifi_fantasy",
-      "thriller_horror"
-    ],
-    "poster_url": "",
-    "franchise": "Mad Max",
-    "franchise_part": 4
-  },
-  {
-    "id": 100,
+    "id": 85,
     "kind": "film",
     "title": "Dune",
     "year": 2021,

@@ -4,6 +4,7 @@ from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMar
 from catalog import item_by_id, load_books, load_movies
 from config import MEDIA_BOOK, MEDIA_MOVIE
 from database import reschedule_reminder, set_library_entry, set_rating
+from media_cards import apply_choice_to_caption, reaction_keyboard
 
 router = Router()
 
@@ -29,14 +30,28 @@ def rating_keyboard(prefix: str, item_id: int) -> InlineKeyboardMarkup:
     )
 
 
+async def _update_card_reaction(
+    callback: CallbackQuery,
+    media_type: str,
+    item_id: int,
+    choice: str,
+) -> None:
+    if not callback.message:
+        return
+    markup = reaction_keyboard(media_type, item_id, choice)  # type: ignore[arg-type]
+    current = callback.message.caption or callback.message.text or ""
+    new_text = apply_choice_to_caption(current, choice)  # type: ignore[arg-type]
+    if callback.message.photo:
+        await callback.message.edit_caption(caption=new_text, reply_markup=markup)
+    else:
+        await callback.message.edit_text(new_text, reply_markup=markup)
+
+
 @router.callback_query(F.data.regexp(r"^ry:(b|m):\d+$"))
 async def on_reaction_yes(callback: CallbackQuery) -> None:
     _, prefix, item_id_raw = callback.data.split(":")
     media_type = _media_from_prefix(prefix)
     item_id = int(item_id_raw)
-    item = item_by_id(_catalog(media_type), item_id)
-    title = str(item.get("title") if item else item_id)
-
     await set_library_entry(
         callback.from_user.id,
         media_type,
@@ -44,9 +59,8 @@ async def on_reaction_yes(callback: CallbackQuery) -> None:
         "planned",
         schedule_rating=True,
     )
-    await callback.answer("Добавил в планы ✓")
-    if callback.message:
-        await callback.message.answer(f"«{title}» в списке «В планах». Через 10 дней спрошу, как прошло.")
+    await _update_card_reaction(callback, media_type, item_id, "planned")
+    await callback.answer("В планах ✓")
 
 
 @router.callback_query(F.data.regexp(r"^rn:(b|m):\d+$"))
@@ -62,7 +76,8 @@ async def on_reaction_no(callback: CallbackQuery) -> None:
         "not_interested",
         schedule_rating=False,
     )
-    await callback.answer("Ок, не будем предлагать")
+    await _update_card_reaction(callback, media_type, item_id, "not_interested")
+    await callback.answer("Отметил: не моё")
 
 
 @router.callback_query(F.data.regexp(r"^rt:(b|m):\d+:[1-5]$"))

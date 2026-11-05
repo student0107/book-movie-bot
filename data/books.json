@@ -1504,46 +1504,10 @@
     "cover_url": ""
   },
   {
-    "id": 89,
-    "title": "Спеши любить",
-    "author": "Nicholas Sparks",
-    "aliases": [],
-    "pages": 206,
-    "tags": [
-      "first_love",
-      "psych_tension",
-      "family_secrets",
-      "friendship_team",
-      "rebellion"
-    ],
-    "series": null,
-    "series_part": null,
-    "cover_url": ""
-  },
-  {
     "id": 90,
     "title": "Граф Monte Cristo",
     "author": "Alexandre Dumas",
     "aliases": [],
-    "pages": 1056,
-    "tags": [
-      "rebellion",
-      "investigation",
-      "court_intrigue",
-      "family_secrets",
-      "friendship_team"
-    ],
-    "series": null,
-    "series_part": null,
-    "cover_url": ""
-  },
-  {
-    "id": 91,
-    "title": "Граф Monte Cristo",
-    "author": "Alexandre Dumas",
-    "aliases": [
-      "monte cristo"
-    ],
     "pages": 1056,
     "tags": [
       "rebellion",
@@ -1625,23 +1589,6 @@
     "cover_url": ""
   },
   {
-    "id": 96,
-    "title": "Унесённые ветром",
-    "author": "Margaret Mitchell",
-    "aliases": [],
-    "pages": 1037,
-    "tags": [
-      "first_love",
-      "rebellion",
-      "psych_tension",
-      "family_secrets",
-      "court_intrigue"
-    ],
-    "series": null,
-    "series_part": null,
-    "cover_url": ""
-  },
-  {
     "id": 97,
     "title": "Лolita",
     "author": "Vladimir Nabokov",
@@ -1653,40 +1600,6 @@
       "family_secrets",
       "investigation",
       "rebellion"
-    ],
-    "series": null,
-    "series_part": null,
-    "cover_url": ""
-  },
-  {
-    "id": 98,
-    "title": "Лolita",
-    "author": "Vladimir Nabokov",
-    "aliases": [],
-    "pages": 336,
-    "tags": [
-      "psych_tension",
-      "first_love",
-      "family_secrets",
-      "investigation",
-      "rebellion"
-    ],
-    "series": null,
-    "series_part": null,
-    "cover_url": ""
-  },
-  {
-    "id": 99,
-    "title": "Fahrenheit",
-    "author": "Ray Bradbury",
-    "aliases": [],
-    "pages": 249,
-    "tags": [
-      "dystopia",
-      "rebellion",
-      "psych_tension",
-      "magic_rituals",
-      "family_secrets"
     ],
     "series": null,
     "series_part": null,

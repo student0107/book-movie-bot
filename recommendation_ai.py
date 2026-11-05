@@ -5,7 +5,7 @@ from typing import Any
 from aiogram.fsm.context import FSMContext
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from catalog import item_by_id, load_books, load_movies
+from catalog import load_books, load_movies
 from config import (
     DURATION_OPTIONS,
     MEDIA_BOOK,
@@ -15,7 +15,7 @@ from config import (
     TAGS,
     VOLUME_OPTIONS,
 )
-from database import add_shown_ids, load_books_profile, load_movies_profile
+from database import add_shown_ids, get_shown_ids, load_books_profile, load_movies_profile
 from llm_client import llm_enabled, rank_catalog_items, summarize_taste
 from media_cards import send_book_card, send_movie_card
 from recommendation import BooksProfile, is_same_author_book, recommend_books, recommendation_intro
@@ -25,6 +25,57 @@ from recommendation_movies import (
     recommend_movies,
     recommendation_intro_movies,
 )
+
+SURVEY_CANDIDATE_POOL = 25
+
+BOOKS_CATALOG_EXHAUSTED = "По вашим интересам больше книг не найдено :("
+
+MOVIES_CATALOG_EXHAUSTED = "По вашим интересам больше фильмов не найдено :("
+
+BOOKS_MORE_LIMIT_MESSAGE = (
+    "По тому запросу, что ты выбрал в анкете, я уже показал всё из каталога — "
+    "новых книг под эти настройки больше нет.\n\n"
+    "Мы ещё наполняем базу: скоро добавим больше.\n\n"
+    "А пока можешь пройти /start, выбрать другие темы или убрать что-то из "
+    "«исключить» — подберу свежую пятёрку."
+)
+
+MOVIES_MORE_LIMIT_MESSAGE = (
+    "По тому запросу, что ты выбрал в анкете, я уже показал всё из каталога — "
+    "новых фильмов и сериалов под эти настройки больше нет.\n\n"
+    "Мы ещё наполняем базу: скоро добавим больше.\n\n"
+    "А пока можешь пройти /start, выбрать другие жанры или убрать что-то из "
+    "«исключить» — подберу свежую пятёрку."
+)
+
+
+def catalog_exhausted_message(media_type: str) -> str:
+    if media_type == MEDIA_BOOK:
+        return BOOKS_CATALOG_EXHAUSTED
+    return MOVIES_CATALOG_EXHAUSTED
+
+
+def more_options_limit_message(media_type: str) -> str:
+    if media_type == MEDIA_BOOK:
+        return BOOKS_MORE_LIMIT_MESSAGE
+    return MOVIES_MORE_LIMIT_MESSAGE
+
+
+def more_options_keyboard(media_type: str) -> InlineKeyboardMarkup:
+    more_data = "books_more" if media_type == MEDIA_BOOK else "movies_more"
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(text="🔄 Ещё варианты", callback_data=more_data)],
+            [InlineKeyboardButton(text="🏠 В меню", callback_data="go_start")],
+        ]
+    )
+
+
+async def send_more_options_prompt(message: Message, media_type: str) -> None:
+    await message.answer(
+        "Хочешь ещё варианты?",
+        reply_markup=more_options_keyboard(media_type),
+    )
 
 
 def _tag_labels(media_type: str, tag_ids: set[str]) -> list[str]:
@@ -57,12 +108,46 @@ async def build_taste_summary(
     )
 
 
+def filter_not_shown(
+    items: list[dict[str, Any]],
+    exclude_ids: set[int],
+) -> list[dict[str, Any]]:
+    if not exclude_ids:
+        return list(items)
+    return [item for item in items if int(item["id"]) not in exclude_ids]
+
+
+def _top_up_batch_from_pool(
+    batch: list[dict[str, Any]],
+    pool: list[dict[str, Any]],
+    exclude_ids: set[int],
+    limit: int,
+) -> list[dict[str, Any]]:
+    seen = set(exclude_ids) | {int(item["id"]) for item in batch}
+    result = list(batch)
+    for item in pool:
+        item_id = int(item["id"])
+        if item_id in seen:
+            continue
+        result.append(item)
+        seen.add(item_id)
+        if len(result) >= limit:
+            break
+    return result[:limit]
+
+
 async def apply_llm_order(
     media_type: str,
     profile_row: dict[str, Any],
     candidates: list[dict[str, Any]],
     limit: int,
+    *,
+    exclude_ids: set[int] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[int, str]]:
+    exclude = set(exclude_ids or [])
+    candidates = filter_not_shown(candidates, exclude)
+    if not candidates:
+        return [], {}
     taste = str(profile_row.get("taste_summary") or "")
     favorite_raw = str(
         profile_row.get("favorite_book_raw")
@@ -83,6 +168,8 @@ async def apply_llm_order(
     if not llm_enabled():
         return candidates[:limit], {}
 
+    candidate_by_id = {int(item["id"]): item for item in candidates}
+
     ranked = await rank_catalog_items(
         media_label="книги" if media_type == MEDIA_BOOK else "фильмы",
         taste_summary=taste,
@@ -99,16 +186,17 @@ async def apply_llm_order(
 
     why_map = {item_id: why for item_id, why in ranked}
     ordered: list[dict[str, Any]] = []
-    catalog = load_books() if media_type == MEDIA_BOOK else load_movies()
     for item_id, _ in ranked:
-        item = item_by_id(catalog, item_id)
+        if item_id in exclude:
+            continue
+        item = candidate_by_id.get(item_id)
         if item:
             ordered.append(item)
 
     seen = {int(item["id"]) for item in ordered}
     for item in candidates:
         item_id = int(item["id"])
-        if item_id in seen:
+        if item_id in seen or item_id in exclude:
             continue
         ordered.append(item)
         seen.add(item_id)
@@ -116,6 +204,29 @@ async def apply_llm_order(
             break
 
     return ordered[:limit], why_map
+
+
+async def pick_ranked_batch(
+    media_type: str,
+    profile_row: dict[str, Any],
+    candidates: list[dict[str, Any]],
+    shown_ids: set[int],
+    limit: int,
+) -> tuple[list[dict[str, Any]], dict[int, str]]:
+    pool = filter_not_shown(candidates, shown_ids)
+    if not pool:
+        return [], {}
+
+    ordered, why_map = await apply_llm_order(
+        media_type,
+        profile_row,
+        pool,
+        limit,
+        exclude_ids=shown_ids,
+    )
+    batch = filter_not_shown(ordered, shown_ids)
+    batch = _top_up_batch_from_pool(batch, pool, shown_ids, limit)
+    return batch, why_map
 
 
 def _books_profile_from_row(row: dict[str, Any]) -> BooksProfile:
@@ -199,16 +310,18 @@ async def deliver_survey_recommendations(
     profile_row: dict[str, Any],
     state: FSMContext,
     *,
-    candidate_pool: int = 25,
+    candidate_pool: int = SURVEY_CANDIDATE_POOL,
 ) -> None:
+    shown_ids = await get_shown_ids(user_id, media_type)
+
     if media_type == MEDIA_BOOK:
         catalog = load_books()
         profile = _books_profile_from_row(profile_row)
         candidates, meta = recommend_books(
             catalog,
             profile,
-            offset=0,
             limit=candidate_pool,
+            already_shown=shown_ids,
         )
         intro_fn = recommendation_intro
     else:
@@ -217,8 +330,8 @@ async def deliver_survey_recommendations(
         candidates, meta = recommend_movies(
             catalog,
             profile,
-            offset=0,
             limit=candidate_pool,
+            already_shown=shown_ids,
         )
         intro_fn = recommendation_intro_movies
 
@@ -230,12 +343,18 @@ async def deliver_survey_recommendations(
         await state.clear()
         return
 
-    books, why_map = await apply_llm_order(
+    books, why_map = await pick_ranked_batch(
         media_type,
         profile_row,
         candidates,
+        shown_ids,
         RECOMMENDATION_BATCH_SIZE,
     )
+
+    if not books:
+        await message.answer(catalog_exhausted_message(media_type))
+        await state.clear()
+        return
 
     intro = intro_fn(meta)
     taste = str(profile_row.get("taste_summary") or "").strip()
@@ -249,22 +368,16 @@ async def deliver_survey_recommendations(
         why = why_map.get(item_id, "")
         if media_type == MEDIA_BOOK:
             same = is_same_author_book(item, profile)  # type: ignore[arg-type]
-            await send_book_card(message, item, same_author=same, why=why)
+            await send_book_card(
+                message, item, same_author=same, why=why, user_id=user_id
+            )
         else:
             same = is_same_director_movie(item, profile, catalog)  # type: ignore[arg-type]
-            await send_movie_card(message, item, same_director=same, why=why)
+            await send_movie_card(
+                message, item, same_director=same, why=why, user_id=user_id
+            )
         shown_ids.append(item_id)
 
     await add_shown_ids(user_id, media_type, shown_ids)
-    await state.update_data(recommendation_offset=len(shown_ids))
-    more_data = "books_more" if media_type == MEDIA_BOOK else "movies_more"
-    await message.answer(
-        "Хочешь ещё варианты?",
-        reply_markup=InlineKeyboardMarkup(
-            inline_keyboard=[
-                [InlineKeyboardButton(text="🔄 Ещё варианты", callback_data=more_data)],
-                [InlineKeyboardButton(text="🏠 В меню", callback_data="go_start")],
-            ]
-        ),
-    )
+    await send_more_options_prompt(message, media_type)
     await state.set_state(None)

@@ -58,7 +58,13 @@ async def _send_personal(message: Message, media_type: str) -> None:
             item_id = int(pick.item["id"])
             why = why_overrides.get(item_id, pick.why)
             same = is_same_author_book(pick.item, profile)
-            await send_book_card(message, pick.item, same_author=same, why=why)
+            await send_book_card(
+                message,
+                pick.item,
+                same_author=same,
+                why=why,
+                user_id=message.from_user.id,
+            )
     else:
         profile = MoviesProfile(
             tags_include=set(profile_row.get("tags_include") or []) if profile_row else set(),
@@ -73,7 +79,13 @@ async def _send_personal(message: Message, media_type: str) -> None:
             item_id = int(pick.item["id"])
             why = why_overrides.get(item_id, pick.why)
             same = is_same_director_movie(pick.item, profile, catalog_list)
-            await send_movie_card(message, pick.item, same_director=same, why=why)
+            await send_movie_card(
+                message,
+                pick.item,
+                same_director=same,
+                why=why,
+                user_id=message.from_user.id,
+            )
 
 
 @router.message(Command("recommend"))

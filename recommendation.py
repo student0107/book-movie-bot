@@ -235,11 +235,56 @@ def same_author_books(
     return candidates
 
 
+def _next_unshown_items(
+    items: list[dict[str, Any]],
+    shown: set[int],
+    limit: int,
+) -> list[dict[str, Any]]:
+    page: list[dict[str, Any]] = []
+    for item in items:
+        item_id = int(item["id"])
+        if item_id in shown:
+            continue
+        page.append(item)
+        if len(page) >= limit:
+            break
+    return page
+
+
+def _fallback_unshown_from_catalog(
+    catalog: list[dict[str, Any]],
+    profile: BooksProfile,
+    shown: set[int],
+    limit: int,
+) -> list[dict[str, Any]]:
+    exclude = set(profile.tags_exclude)
+    original_tags = set(profile.tags_include)
+    volume = profile.volume_preference
+    candidates: list[dict[str, Any]] = []
+    for book in catalog:
+        book_id = int(book["id"])
+        if book_id in shown:
+            continue
+        if _has_excluded_tags(book, exclude):
+            continue
+        candidates.append(book)
+    candidates.sort(
+        key=lambda book: _score_book(
+            book,
+            original_tags,
+            exclude,
+            volume,
+            same_author=is_same_author_book(book, profile),
+        ),
+        reverse=True,
+    )
+    return candidates[:limit]
+
+
 def recommend_books(
     catalog: list[dict[str, Any]],
     profile: BooksProfile,
     *,
-    offset: int = 0,
     limit: int = RECOMMENDATION_BATCH_SIZE,
     already_shown: set[int] | None = None,
 ) -> tuple[list[dict[str, Any]], RecommendationMeta]:
@@ -295,18 +340,11 @@ def recommend_books(
         ),
     )
 
-    slice_start = offset
-    slice_end = offset + limit
-    page = [book for book in merged[slice_start:slice_end] if int(book["id"]) not in shown]
-
-    if not page and offset == 0:
-        for book in merged:
-            book_id = int(book["id"])
-            if book_id in shown:
-                continue
-            page.append(book)
-            if len(page) >= limit:
-                break
+    page = _next_unshown_items(merged, shown, limit)
+    if not page:
+        page = _fallback_unshown_from_catalog(catalog, profile, shown, limit)
+        if page:
+            meta.relaxed = True
 
     return page, meta
 

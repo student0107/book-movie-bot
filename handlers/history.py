@@ -1,6 +1,6 @@
-from aiogram import Router
+from aiogram import F, Router
 from aiogram.filters import Command
-from aiogram.types import Message
+from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from catalog import item_by_id, load_books, load_movies
 from catalog_display import display_title
@@ -25,6 +25,60 @@ def _format_section(title: str, rows: list[str]) -> str:
         return ""
     body = "\n".join(f"• {line}" for line in rows)
     return f"\n{title}\n{body}"
+
+
+def _format_plans_group(title: str, rows: list[str]) -> str:
+    if rows:
+        body = "\n".join(f"• {line}" for line in rows)
+    else:
+        body = "• пока ничего"
+    return f"\n{title}\n{body}"
+
+
+def plans_menu_keyboard() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(text="◀ В меню", callback_data="go_start")],
+        ]
+    )
+
+
+async def build_plans_text(user_id: int) -> str:
+    entries = await list_library(user_id)
+    planned = [entry for entry in entries if str(entry.get("status") or "") == "planned"]
+    if not planned:
+        return (
+            "📝 Мои планы\n\n"
+            "Пока пусто. Отмечай 👍 «В планы» под карточками в подборке."
+        )
+
+    book_titles: list[str] = []
+    movie_titles: list[str] = []
+    for entry in planned:
+        media = str(entry.get("media_type") or "")
+        title = _title(media, int(entry["item_id"]))
+        if media == MEDIA_BOOK:
+            book_titles.append(title)
+        elif media == MEDIA_MOVIE:
+            movie_titles.append(title)
+
+    text = "📝 Мои планы"
+    text += _format_plans_group("📚 Книги", book_titles)
+    text += _format_plans_group("🎬 Фильмы и сериалы", movie_titles)
+    return text.strip()
+
+
+@router.message(Command("plans"))
+async def cmd_plans(message: Message) -> None:
+    text = await build_plans_text(message.from_user.id)
+    await message.answer(text, reply_markup=plans_menu_keyboard())
+
+
+@router.callback_query(F.data == "show_plans")
+async def on_show_plans(callback: CallbackQuery) -> None:
+    text = await build_plans_text(callback.from_user.id)
+    await callback.message.answer(text, reply_markup=plans_menu_keyboard())
+    await callback.answer()
 
 
 @router.message(Command("history"))

@@ -4,7 +4,7 @@ from pathlib import Path
 
 import aiosqlite
 
-from config import MEDIA_BOOK, MEDIA_MOVIE, RATING_REMINDER_DAYS
+from config import MEDIA_BOOK, MEDIA_MOVIE, rating_reminder_days
 
 DB_PATH = Path(__file__).resolve().parent / "bot_data.db"
 
@@ -79,6 +79,17 @@ async def init_db() -> None:
         )
         await db.commit()
         await _migrate_profile_columns(db)
+        await _migrate_recommendation_session(db)
+
+
+async def _migrate_recommendation_session(db: aiosqlite.Connection) -> None:
+    cursor = await db.execute("PRAGMA table_info(recommendation_session)")
+    columns = {row[1] for row in await cursor.fetchall()}
+    if "more_used" not in columns:
+        await db.execute(
+            "ALTER TABLE recommendation_session ADD COLUMN more_used INTEGER NOT NULL DEFAULT 0"
+        )
+        await db.commit()
 
 
 async def _migrate_profile_columns(db: aiosqlite.Connection) -> None:
@@ -249,13 +260,83 @@ async def add_shown_ids(user_id: int, media_type: str, item_ids: list[int]) -> N
     async with aiosqlite.connect(DB_PATH) as db:
         await db.execute(
             """
-            INSERT INTO recommendation_session (user_id, media_type, shown_ids)
-            VALUES (?, ?, ?)
+            INSERT INTO recommendation_session (user_id, media_type, shown_ids, more_used)
+            VALUES (?, ?, ?, 0)
             ON CONFLICT(user_id, media_type) DO UPDATE SET shown_ids = excluded.shown_ids
             """,
             (user_id, media_type, payload),
         )
         await db.commit()
+
+
+async def is_more_options_used(user_id: int, media_type: str) -> bool:
+    async with aiosqlite.connect(DB_PATH) as db:
+        cursor = await db.execute(
+            """
+            SELECT more_used FROM recommendation_session
+            WHERE user_id = ? AND media_type = ?
+            """,
+            (user_id, media_type),
+        )
+        row = await cursor.fetchone()
+        if row is None:
+            return False
+        return bool(row[0])
+
+
+async def set_more_options_used(user_id: int, media_type: str) -> None:
+    async with aiosqlite.connect(DB_PATH) as db:
+        cursor = await db.execute(
+            """
+            SELECT shown_ids FROM recommendation_session
+            WHERE user_id = ? AND media_type = ?
+            """,
+            (user_id, media_type),
+        )
+        row = await cursor.fetchone()
+        shown_payload = row[0] if row is not None else "[]"
+        await db.execute(
+            """
+            INSERT INTO recommendation_session (user_id, media_type, shown_ids, more_used)
+            VALUES (?, ?, ?, 1)
+            ON CONFLICT(user_id, media_type) DO UPDATE SET more_used = 1
+            """,
+            (user_id, media_type, shown_payload),
+        )
+        await db.commit()
+
+
+async def _cancel_pending_reminders(
+    db: aiosqlite.Connection,
+    user_id: int,
+    media_type: str,
+    item_id: int,
+) -> None:
+    await db.execute(
+        """
+        DELETE FROM reminders
+        WHERE user_id = ? AND media_type = ? AND item_id = ? AND sent = 0
+        """,
+        (user_id, media_type, item_id),
+    )
+
+
+async def get_reaction_choice(
+    user_id: int,
+    media_type: str,
+    item_id: int,
+) -> str | None:
+    """Текущий выбор под карточкой: planned, not_interested или None."""
+    entry = await get_library_map(user_id, media_type)
+    row = entry.get(item_id)
+    if not row:
+        return None
+    status = str(row.get("status") or "")
+    if status == "planned":
+        return "planned"
+    if status == "not_interested":
+        return "not_interested"
+    return None
 
 
 async def set_library_entry(
@@ -267,7 +348,6 @@ async def set_library_entry(
     schedule_rating: bool = False,
 ) -> None:
     now = datetime.now(timezone.utc).isoformat()
-    planned_at = now if status == "planned" else None
     async with aiosqlite.connect(DB_PATH) as db:
         cursor = await db.execute(
             """
@@ -277,10 +357,13 @@ async def set_library_entry(
             (user_id, media_type, item_id),
         )
         existing = await cursor.fetchone()
-        if existing and existing[1]:
-            planned_at = existing[1]
-        if status == "planned" and not planned_at:
-            planned_at = now
+
+        if status == "planned":
+            planned_at = existing[1] if existing and existing[1] else now
+        elif status == "not_interested":
+            planned_at = None
+        else:
+            planned_at = existing[1] if existing and existing[1] else None
 
         await db.execute(
             """
@@ -289,14 +372,21 @@ async def set_library_entry(
             ) VALUES (?, ?, ?, ?, ?, ?, NULL, NULL)
             ON CONFLICT(user_id, media_type, item_id) DO UPDATE SET
                 status = excluded.status,
-                planned_at = COALESCE(user_library.planned_at, excluded.planned_at),
+                planned_at = excluded.planned_at,
                 updated_at = excluded.updated_at
             """,
             (user_id, media_type, item_id, status, planned_at, now),
         )
-        if schedule_rating and status == "planned":
+
+        if status == "not_interested":
+            await _cancel_pending_reminders(db, user_id, media_type, item_id)
+        elif status in ("reading", "finished", "dnf"):
+            await _cancel_pending_reminders(db, user_id, media_type, item_id)
+        elif schedule_rating and status == "planned":
+            await _cancel_pending_reminders(db, user_id, media_type, item_id)
+            delay_days = rating_reminder_days(media_type)
             run_at = (
-                datetime.now(timezone.utc) + timedelta(days=RATING_REMINDER_DAYS)
+                datetime.now(timezone.utc) + timedelta(days=delay_days)
             ).isoformat()
             await db.execute(
                 """
@@ -440,8 +530,10 @@ async def reschedule_reminder(
     user_id: int,
     media_type: str,
     item_id: int,
-    days: int = RATING_REMINDER_DAYS,
+    days: int | None = None,
 ) -> None:
+    if days is None:
+        days = rating_reminder_days(media_type)
     run_at = (datetime.now(timezone.utc) + timedelta(days=days)).isoformat()
     async with aiosqlite.connect(DB_PATH) as db:
         await db.execute(

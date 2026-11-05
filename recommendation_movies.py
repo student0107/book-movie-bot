@@ -210,11 +210,56 @@ def same_director_movies(
     return candidates
 
 
+def _next_unshown_items(
+    items: list[dict[str, Any]],
+    shown: set[int],
+    limit: int,
+) -> list[dict[str, Any]]:
+    page: list[dict[str, Any]] = []
+    for item in items:
+        item_id = int(item["id"])
+        if item_id in shown:
+            continue
+        page.append(item)
+        if len(page) >= limit:
+            break
+    return page
+
+
+def _fallback_unshown_from_catalog(
+    catalog: list[dict[str, Any]],
+    profile: MoviesProfile,
+    shown: set[int],
+    limit: int,
+) -> list[dict[str, Any]]:
+    exclude = set(profile.tags_exclude)
+    original_tags = set(profile.tags_include)
+    duration = profile.duration_preference
+    candidates: list[dict[str, Any]] = []
+    for movie in catalog:
+        movie_id = int(movie["id"])
+        if movie_id in shown:
+            continue
+        if _has_excluded_tags(movie, exclude):
+            continue
+        candidates.append(movie)
+    candidates.sort(
+        key=lambda movie: _score_movie(
+            movie,
+            original_tags,
+            exclude,
+            duration,
+            same_director=is_same_director_movie(movie, profile),
+        ),
+        reverse=True,
+    )
+    return candidates[:limit]
+
+
 def recommend_movies(
     catalog: list[dict[str, Any]],
     profile: MoviesProfile,
     *,
-    offset: int = 0,
     limit: int = RECOMMENDATION_BATCH_SIZE,
     already_shown: set[int] | None = None,
 ) -> tuple[list[dict[str, Any]], RecommendationMeta]:
@@ -265,18 +310,11 @@ def recommend_movies(
         ),
     )
 
-    slice_start = offset
-    slice_end = offset + limit
-    page = [movie for movie in merged[slice_start:slice_end] if int(movie["id"]) not in shown]
-
-    if not page and offset == 0:
-        for movie in merged:
-            movie_id = int(movie["id"])
-            if movie_id in shown:
-                continue
-            page.append(movie)
-            if len(page) >= limit:
-                break
+    page = _next_unshown_items(merged, shown, limit)
+    if not page:
+        page = _fallback_unshown_from_catalog(catalog, profile, shown, limit)
+        if page:
+            meta.relaxed = True
 
     return page, meta
 

@@ -6,7 +6,7 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from catalog import load_movies
-from config import MEDIA_MOVIE, MOVIE_TAGS, DURATION_OPTIONS
+from config import MEDIA_MOVIE, MOVIE_TAGS, DURATION_OPTIONS, RECOMMENDATION_BATCH_SIZE
 from database import add_shown_ids, save_movies_profile
 from media_cards import send_movie_card
 from recommendation_movies import (
@@ -16,21 +16,66 @@ from recommendation_movies import (
     is_same_director_movie,
 )
 from recommendation_ai import (
-    apply_llm_order,
+    SURVEY_CANDIDATE_POOL,
+    catalog_exhausted_message,
+    more_options_limit_message,
     build_taste_summary,
     deliver_survey_recommendations,
+    filter_not_shown,
+    pick_ranked_batch,
     profile_row_for_user,
     profile_row_from_state,
+    send_more_options_prompt,
 )
 
 router = Router()
 
-M2_SKIP_MARKUP = InlineKeyboardMarkup(
-    inline_keyboard=[[InlineKeyboardButton(text="⏭ Пропустить", callback_data="m2_skip")]]
+MOVIES_BACK = "movies_back"
+
+MOVIES_Q2_TEXT = (
+    "Какой фильм или сериал реально зацепил? Напиши своими словами — "
+    "название или «про что» было. Или нажми «Пропустить»."
 )
-M5_SKIP_MARKUP = InlineKeyboardMarkup(
-    inline_keyboard=[[InlineKeyboardButton(text="⏭ Пропустить", callback_data="m5_skip")]]
+MOVIES_Q5_TEXT = (
+    "Чего ты ждёшь от просмотра? Например: лёгкий вечер, адреналин, "
+    "сериал на несколько дней, чтобы думать — своими словами. "
+    "Или нажми «Пропустить»."
 )
+
+
+def _back_row(callback_data: str) -> list[list[InlineKeyboardButton]]:
+    return [[InlineKeyboardButton(text="◀ Назад", callback_data=callback_data)]]
+
+
+def movies_q2_keyboard() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(text="⏭ Пропустить", callback_data="m2_skip"),
+                InlineKeyboardButton(text="◀ Назад", callback_data=MOVIES_BACK),
+            ],
+        ]
+    )
+
+
+def movies_q5_keyboard() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(text="⏭ Пропустить", callback_data="m5_skip"),
+                InlineKeyboardButton(text="◀ Назад", callback_data=MOVIES_BACK),
+            ],
+        ]
+    )
+
+
+def movies_q4_keyboard() -> InlineKeyboardMarkup:
+    rows = [
+        [InlineKeyboardButton(text=label, callback_data=f"m4dur:{key}")]
+        for key, label in DURATION_OPTIONS.items()
+    ]
+    rows.extend(_back_row(MOVIES_BACK))
+    return InlineKeyboardMarkup(inline_keyboard=rows)
 
 
 class MoviesStates(StatesGroup):
@@ -83,11 +128,42 @@ async def show_movies_q1(message: Message, state: FSMContext, *, edit: bool) -> 
     data = await state.get_data()
     selected = _as_tag_set(data.get("tags_include"))
     text = "Какие жанры тебе заходят? Можно несколько — жми теги, потом «Готово»."
-    markup = tags_keyboard(selected, "m1t", "m1_done")
+    markup = tags_keyboard(
+        selected,
+        "m1t",
+        "m1_done",
+        extra_rows=_back_row(MOVIES_BACK),
+    )
     if edit:
         await message.edit_text(text, reply_markup=markup)
     else:
         await message.answer(text, reply_markup=markup)
+
+
+async def show_movies_q2(message: Message, state: FSMContext, *, edit: bool) -> None:
+    await state.set_state(MoviesStates.q2_favorite)
+    if edit:
+        await message.edit_text(MOVIES_Q2_TEXT, reply_markup=movies_q2_keyboard())
+    else:
+        await message.answer(MOVIES_Q2_TEXT, reply_markup=movies_q2_keyboard())
+
+
+async def show_movies_q4(message: Message, state: FSMContext, *, edit: bool = True) -> None:
+    await state.set_state(MoviesStates.q4_volume)
+    text = "Какая длительность тебе комфортна? (Для сериалов — одна серия.)"
+    markup = movies_q4_keyboard()
+    if edit:
+        await message.edit_text(text, reply_markup=markup)
+    else:
+        await message.answer(text, reply_markup=markup)
+
+
+async def show_movies_q5(message: Message, state: FSMContext, *, edit: bool = True) -> None:
+    await state.set_state(MoviesStates.q5_expectations)
+    if edit:
+        await message.edit_text(MOVIES_Q5_TEXT, reply_markup=movies_q5_keyboard())
+    else:
+        await message.answer(MOVIES_Q5_TEXT, reply_markup=movies_q5_keyboard())
 
 
 async def show_movies_q3(message: Message, state: FSMContext, *, edit: bool = True) -> None:
@@ -102,7 +178,7 @@ async def show_movies_q3(message: Message, state: FSMContext, *, edit: bool = Tr
         "m3t",
         "m3_done",
         allowed_tags=allowed,
-        extra_rows=skip_row,
+        extra_rows=skip_row + _back_row(MOVIES_BACK),
     )
     if edit:
         await message.edit_text(text, reply_markup=markup)
@@ -193,12 +269,34 @@ async def m1_done(callback: CallbackQuery, state: FSMContext) -> None:
     if not selected:
         await callback.answer("Выбери хотя бы один жанр", show_alert=True)
         return
-    await state.set_state(MoviesStates.q2_favorite)
-    await callback.message.edit_text(
-        "Какой фильм или сериал реально зацепил? Напиши своими словами — "
-        "название или «про что» было. Или нажми «Пропустить».",
-        reply_markup=M2_SKIP_MARKUP,
-    )
+    await show_movies_q2(callback.message, state, edit=True)
+    await callback.answer()
+
+
+@router.callback_query(F.data == MOVIES_BACK)
+async def movies_back(callback: CallbackQuery, state: FSMContext) -> None:
+    current = await state.get_state()
+    if current == MoviesStates.q1_tags.state:
+        from handlers.start import main_choice_keyboard
+
+        await state.clear()
+        await callback.message.edit_text(
+            "Что ищем?",
+            reply_markup=main_choice_keyboard(),
+        )
+    elif current == MoviesStates.q2_favorite.state:
+        await state.set_state(MoviesStates.q1_tags)
+        await show_movies_q1(callback.message, state, edit=True)
+    elif current == MoviesStates.q3_exclude.state:
+        await show_movies_q2(callback.message, state, edit=True)
+    elif current == MoviesStates.q4_volume.state:
+        await state.set_state(MoviesStates.q3_exclude)
+        await show_movies_q3(callback.message, state, edit=True)
+    elif current == MoviesStates.q5_expectations.state:
+        await show_movies_q4(callback.message, state, edit=True)
+    else:
+        await callback.answer()
+        return
     await callback.answer()
 
 
@@ -258,29 +356,13 @@ async def q3_toggle(callback: CallbackQuery, state: FSMContext) -> None:
 @router.callback_query(MoviesStates.q3_exclude, F.data == "m3_skip")
 async def m3_skip(callback: CallbackQuery, state: FSMContext) -> None:
     await state.update_data(tags_exclude=[])
-    await state.set_state(MoviesStates.q4_volume)
-    rows = [
-        [InlineKeyboardButton(text=label, callback_data=f"m4dur:{key}")]
-        for key, label in DURATION_OPTIONS.items()
-    ]
-    await callback.message.edit_text(
-        "Какая длительность тебе комфортна? (Для сериалов — одна серия.)",
-        reply_markup=InlineKeyboardMarkup(inline_keyboard=rows),
-    )
+    await show_movies_q4(callback.message, state, edit=True)
     await callback.answer()
 
 
 @router.callback_query(MoviesStates.q3_exclude, F.data == "m3_done")
 async def m3_done(callback: CallbackQuery, state: FSMContext) -> None:
-    await state.set_state(MoviesStates.q4_volume)
-    rows = [
-        [InlineKeyboardButton(text=label, callback_data=f"m4dur:{key}")]
-        for key, label in DURATION_OPTIONS.items()
-    ]
-    await callback.message.edit_text(
-        "Какая длительность тебе комфортна? (Для сериалов — одна серия.)",
-        reply_markup=InlineKeyboardMarkup(inline_keyboard=rows),
-    )
+    await show_movies_q4(callback.message, state, edit=True)
     await callback.answer()
 
 
@@ -292,13 +374,7 @@ async def q4_volume(callback: CallbackQuery, state: FSMContext) -> None:
         return
 
     await state.update_data(duration_preference=volume_key)
-    await state.set_state(MoviesStates.q5_expectations)
-    await callback.message.edit_text(
-        "Чего ты ждёшь от просмотра? Например: лёгкий вечер, адреналин, "
-        "сериал на несколько дней, чтобы думать — своими словами. "
-        "Или нажми «Пропустить».",
-        reply_markup=M5_SKIP_MARKUP,
-    )
+    await show_movies_q5(callback.message, state, edit=True)
     await callback.answer()
 
 
@@ -343,7 +419,13 @@ async def movies_more(callback: CallbackQuery, state: FSMContext) -> None:
         await callback.answer("Сначала пройди подбор фильмов через /start", show_alert=True)
         return
 
-    from database import get_shown_ids
+    from database import get_shown_ids, is_more_options_used, set_more_options_used
+
+    user_id = callback.from_user.id
+    if await is_more_options_used(user_id, MEDIA_MOVIE):
+        await callback.message.answer(more_options_limit_message(MEDIA_MOVIE))
+        await callback.answer()
+        return
 
     catalog = load_movies()
     profile = MoviesProfile(
@@ -354,37 +436,54 @@ async def movies_more(callback: CallbackQuery, state: FSMContext) -> None:
         favorite_movie_raw=str(data.get("favorite_movie_raw") or ""),
         favorite_director=data.get("favorite_director"),
     )
-    shown = await get_shown_ids(callback.from_user.id, MEDIA_MOVIE)
-    offset = int(data.get("recommendation_offset") or 0)
-    books, meta = recommend_movies(
+    shown = await get_shown_ids(user_id, MEDIA_MOVIE)
+    candidates, meta = recommend_movies(
         catalog,
         profile,
-        offset=offset,
+        limit=SURVEY_CANDIDATE_POOL,
         already_shown=shown,
     )
+    candidates = filter_not_shown(candidates, shown)
 
-    if not books:
-        await callback.message.answer("Похоже, варианты на сегодня закончились — загляни позже или смени жанры.")
+    if not candidates:
+        await set_more_options_used(user_id, MEDIA_MOVIE)
+        await callback.message.answer(catalog_exhausted_message(MEDIA_MOVIE))
         await callback.answer()
         return
 
-    profile_row = await profile_row_for_user(callback.from_user.id, MEDIA_MOVIE, data)
+    profile_row = await profile_row_for_user(user_id, MEDIA_MOVIE, data)
 
-    books, why_map = await apply_llm_order(
+    movies, why_map = await pick_ranked_batch(
         MEDIA_MOVIE,
         profile_row,
-        books,
-        len(books),
+        candidates,
+        shown,
+        RECOMMENDATION_BATCH_SIZE,
     )
 
+    to_show = [movie for movie in movies if int(movie["id"]) not in shown]
+    if not to_show:
+        await set_more_options_used(user_id, MEDIA_MOVIE)
+        await callback.message.answer(catalog_exhausted_message(MEDIA_MOVIE))
+        await callback.answer()
+        return
+
+    await set_more_options_used(user_id, MEDIA_MOVIE)
     await callback.message.answer(recommendation_intro_movies(meta))
     new_ids: list[int] = []
-    for book in books:
-        same = is_same_director_movie(book, profile, catalog)
-        why = why_map.get(int(book["id"]), "")
-        await send_movie_card(callback.message, book, same_director=same, why=why)
-        new_ids.append(int(book["id"]))
+    for movie in to_show:
+        movie_id = int(movie["id"])
+        same = is_same_director_movie(movie, profile, catalog)
+        why = why_map.get(movie_id, "")
+        await send_movie_card(
+            callback.message,
+            movie,
+            same_director=same,
+            why=why,
+            user_id=user_id,
+        )
+        new_ids.append(movie_id)
 
-    await add_shown_ids(callback.from_user.id, MEDIA_MOVIE, new_ids)
-    await state.update_data(recommendation_offset=offset + len(new_ids))
+    await add_shown_ids(user_id, MEDIA_MOVIE, new_ids)
+    await send_more_options_prompt(callback.message, MEDIA_MOVIE)
     await callback.answer()

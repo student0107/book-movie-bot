@@ -24,6 +24,7 @@ def main_choice_keyboard() -> InlineKeyboardMarkup:
                 InlineKeyboardButton(text="📚 Книги", callback_data="pick_books"),
                 InlineKeyboardButton(text="🎬 Фильмы", callback_data="pick_movies"),
             ],
+            [InlineKeyboardButton(text="📝 Мои планы", callback_data="show_plans")],
         ]
     )
 
